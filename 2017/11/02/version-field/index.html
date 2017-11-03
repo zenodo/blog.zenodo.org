@@ -4,28 +4,27 @@
 <meta property="og:image" content="http://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
 
 
-<meta property="og:title" content="Zenodo - Research. Shared." />
+<meta property="og:title" content="Version field launched!" />
 
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
 
 
-<meta property="og:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@zenodo_org" />
 <meta name="twitter:creator" content="@zenodo_org" />
 
-<meta name="twitter:title" content="Zenodo - Research. Shared." />
+<meta property="og:title" content="Version field launched!" />
 
 
 
 <meta name="twitter:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
 
 <meta name="twitter:image" content="http://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
-<link rel="stylesheet" href="../../static/zenodo.css">
-<link rel="stylesheet" href="../../static/style.css">
-<link rel="stylesheet" href="../../static/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../../static/zenodo.css">
+<link rel="stylesheet" href="../../../../static/style.css">
+<link rel="stylesheet" href="../../../../static/font-awesome/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
 <title>Zenodo</title>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -62,54 +61,32 @@
       <div class="row">
         <div class="col-md-12">
           
-
   
     
-<a href="../../2017/02/28/zenodo-docs-have-landed/"><h1>The Zenodo Blog has landed!</h1></a>
+<h1>Version field launched!</h1>
 
 <p class="meta">
   by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
-  Lars Holm Nielsen
-  on February 28, 2017
+  <img class="img-rounded" width=18 height=18 src="../../../../static/img/authors/aioannidis.jpg" />
+  Alexander Ioannidis
+  on November 2, 2017
 </p>
 <hr />
-<div class="body"><p>After a week-long sprint, we have the pleasure to present the new look-and-feel for Zenodo documentation as well as introduce the Zenodo Blog.
-From now on, in addition to broadcasting on Twitter <a href="https://twitter.com/zenodo_org">@zenodo_org</a>, all major announcements will also happen on this blog. We have also launched four new sub-domains, which topically separate the content into:</p>
-<ul>
-<li><a href="http://blog.zenodo.org">blog.zenodo.org</a> - Blog with major announcements and articles written by our team members.</li>
-<li><a href="http://developers.zenodo.org">developers.zenodo.org</a> - Refreshed REST API documentation.</li>
-<li><a href="http://help.zenodo.org">help.zenodo.org</a> - Help pages with FAQ and features showcase.</li>
-<li><a href="http://about.zenodo.org">about.zenodo.org</a> - General information as well as terms of use, policies and contact information.</li>
-</ul>
-<p>During the spring we will gradually be launching new content on these pages so stay tuned. Write you soon!</p>
+<div class="body"><p>As of today, we have extended our metadata schema with the <code>version</code> term, so you can explicitly specify the version of your software, dataset, or any other type of upload.
+This allows you to use the version tags such as 1.2.1 or 2017.01 instead of the default version numbers such as 1, 2 or 3.
+The addition is part of our efforts to make software a citable, first-class citizen in the world of scientific research.</p>
+<p><img src="../../../../2017/11/02/version-field/version-field.png" alt="Deposit form"></p>
+<p>At the moment the field accepts any kind of text as input, although we strongly suggest that you use <a href="http://semver.org/">semantic versioning</a> for machine-readability.</p>
+<p>The version field is directly integrated within our search results and record pages.</p>
+<p><img src="../../../../2017/11/02/version-field/version-records-search.png" alt="Record page">
+<img src="../../../../2017/11/02/version-field/version-records-ui.png" alt="Record page"></p>
+<h4>What about GitHub releases?</h4>
+<p>This change extends to our GitHub integration, which from now on will automatically populate the version field using the git tag of your GitHub release.
+You don't have to worry about all GitHub releases that have been already published on Zenodo - they have all been updated with their corresponding release tags.</p>
+<h4>Does this affect the order of the record versions?</h4>
+<p>No, the order of the record's versions remains as before, i.e.: record versions are ordered chronologically by the record creation time.</p>
 </div>
   
-  <br />
-  <br />
-
-
-  
-<div class="pagination">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 text-center">
-        
-      </div>
-      <div class="col-md-4 text-center">
-
-        <b><a href="/all">All</a></b>
-      </div>
-      <div class="col-md-4 text-center">
-        
-          <b><a href="../../page/2/">Newer</a></b>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
         </div>
       </div>
