@@ -65,6 +65,73 @@
 
   
     
+<a href="../../2018/08/21/2018-08-21-database-incident/"><h1>Major database incident</h1></a>
+
+<p class="meta">
+  by
+  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+  Lars Holm Nielsen
+  on August 21, 2018
+</p>
+<hr />
+<div class="body"><h4>What happened?</h4>
+<p>On Friday August 17 at 11:45 UTC the Zenodo database crashed because of a full volume on the database server. During auto-restart the database crashed again corrupting tables, which proved to be extremely difficult to recover from. It took three senior engineers, working round the clock, close to 2 days and 12 hours to bring Zenodo back online eventually on Sunday August 19 at 23:30 UTC.</p>
+<h4>How did it happen?</h4>
+<p>The root cause was an import of 2 million new grants to our grants database. This generated a very high insertion rate to our database. The database server has built-in protective mechanisms that automatically extend the disk volumes in case they approach being full. Exceptionally, due to the high insertion rate, the mechanisms did not fire fast enough. The full disk caused the database to crash after which it automatically restarted and tried to recover. Exceptionally, during the recovery phase, the database crashed again causing corruption to parts of the database.</p>
+<h4>Is it fixed?</h4>
+<p>Through hours of manual reconstruction work we have recovered the entire database until 20 minutes before the crash. We are still working on recovering the remaining 20 minutes from other sources. We have good hope to have finished recovery of the full database by the end of the week.</p>
+<h4>Is my record affected?</h4>
+<p>Only a handful of records submitted in the 20 minutes before the crash are affected. We have temporarily disabled these records until we have managed to thoroughly verify their integrity. If your record has been disabled, you’ll see a page similar to this one <a href="https://zenodo.org/record/1346821">https://zenodo.org/record/1346821</a>.</p>
+<h4>Why so long downtime?</h4>
+<p>Our prime concern is to avoid data loss, so we chose the harder, longer path to recover in order to minimise data loss rather than maximise uptime. We currently backup our entire database every 12 hours to disk and every week to tape. The latest backup prior to the incident was at 05:00 UTC. Thus using this backup would have meant more than 6 hours of data loss from the database. To avoid data loss, we therefore decided instead to repair the corrupted parts of the database, thus causing significantly longer downtime than if we had restored a backup. The repairing was possible because we could re-validate the database against our search index and web server access logs.</p>
+<h4>Were my files at risk?</h4>
+<p>No, the files (the payload of every record) are stored outside the database which only stores the metadata of the records. These files are stored in multiple copies on multiples servers before a new record is completed in the database. However accessing and serving the files requires the database record that points to them. In addition, we write submission information packages (SIPs) to disk which contain both the metadata and uploaded files, however these SIPs are not written to disk immediately, and thus don’t help recover data close to a crash.</p>
+<h4>What did we learn?</h4>
+<p>It is said that every challenge faced makes us stronger! Even though we have numerous protection and self-healing mechanisms at each level of the stack they were not enough, and did not protect against combinatorial failures. We are thus taking this incident very seriously and thoroughly investigating what happened and what can be improved to avoid even more failure modes and to make recovery quicker. One track we are looking at is replica configurations that would isolate crash corruptions to one node.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
+<a href="../../2018/07/18/2018-07-18-usage-statistics/"><h1>Usage statistics launched!</h1></a>
+
+<p class="meta">
+  by
+  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
+  Alex Ioannidis
+  on July 18, 2018
+</p>
+<hr />
+<div class="body"><p>We are happy to announce the launch of usage statistics on Zenodo. From today,
+you will find the number of views and downloads on record pages, and you can
+sort search results by
+<a href="https://zenodo.org/search?sort=mostviewed">most viewed</a>.
+By default we roll-up usage statistics for all versions of a record. However,
+it is also possible to see detailed usage statistics for the specific version
+of a record.</p>
+<h3>Privacy and standards compliant</h3>
+<p>We strongly believe in user’s right to privacy, thus we have spend a lot of
+time to design our system to ensure all tracking is completely anonymized. Our
+usage statistics is further tracked according to industry standards such as
+the <a href="https://www.projectcounter.org/code-of-practice-sections/general-information/">COUNTER Code of Practice</a>
+as well as the <a href="https://peerj.com/preprints/26505/">Code of Practice for Research Data Usage Metrics</a>
+and thus allows you to compare metrics from Zenodo with other compliant
+repositories. You can read much more about this, and exactly how and what we
+track in our <a href="https://help.zenodo.org/#statistics">FAQ</a>.</p>
+<p>The launch today, also only marks the beginning. We will later also be adding
+usage statistics e.g for your communities, so stay tuned!</p>
+<p>If you have any questions or feedback (positive and negative) don’t hesitate
+to <a href="https://zenodo.org/support">get in touch</a> with us.</p>
+<p><img src="../../2018/07/18/2018-07-18-usage-statistics/usage-stats.png" alt="Zenodo Usage Statistics"></p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2018/05/25/2018-05-25-gdpr/"><h1>Zenodo and General Data Protection Regulation (GDPR)</h1></a>
 
 <p class="meta">
@@ -90,64 +157,6 @@
 <li><a href="https://odpp.web.cern.ch">CERN Office for Data Protection</a></li>
 <li><a href="https://home.cern/data-privacy-protection-statement">CERN Data Privacy Protection Statement</a></li>
 </ul>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2018/04/10/advanced-search-guide/"><h1>New help guide: Advanced search</h1></a>
-
-<p class="meta">
-  by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
-  Lars Holm Nielsen
-  on April 10, 2018
-</p>
-<hr />
-<div class="body"><p>Visit the new search guide on
-<a href="https://help.zenodo.org/guides/search/">https://help.zenodo.org/guides/search/</a>.</p>
-<p>Users mostly search on Zenodo using only keywords, similarly to how they
-would search for something on Google or any other other search engine.
-Keywords are, however, not always enough if you're looking for something specific.
-Therefore today, we have launched a <a href="https://help.zenodo.org/guides/search/">search help guide</a>, explaining in detail how you can make use of Zenodo's advanced search features.</p>
-<p>The guide explains basic concepts of simple field searches, e.g., searching only within the title field,
-as well as advanced concepts such as range searches, e.g., searching for publications dated between 2010
-and 2011. The guide also includes a full reference of all available fields you can search on, so you can construct the exact search query you need.</p>
-<p><img src="../../2018/04/10/advanced-search-guide/advanced-search.gif" alt="Search guide for Zenodo"></p>
-<p>Under the hood our search engine is powered by
-<a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch</a> - the
-most powerful open source search engine available on the market today.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/11/02/version-field/"><h1>Version field launched!</h1></a>
-
-<p class="meta">
-  by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
-  Alex Ioannidis
-  on November 2, 2017
-</p>
-<hr />
-<div class="body"><p>As of today, we have extended our metadata schema with the <code>version</code> term, so you can explicitly specify the version of your software, dataset, or any other type of upload.
-This allows you to use the version tags such as 1.2.1 or 2017.01 instead of the default version numbers such as 1, 2 or 3.
-The addition is part of our efforts to make software a citable, first-class citizen in the world of scientific research.</p>
-<p><img src="../../2017/11/02/version-field/version-field.png" alt="Deposit form"></p>
-<p>At the moment the field accepts any kind of text as input, although we strongly suggest that you use <a href="https://semver.org/">semantic versioning</a> for machine-readability.</p>
-<p>The version field is directly integrated within our search results and record pages.</p>
-<p><img src="../../2017/11/02/version-field/version-records-search.png" alt="Record page">
-<img src="../../2017/11/02/version-field/version-records-ui.png" alt="Record page"></p>
-<h4>What about GitHub releases?</h4>
-<p>This change extends to our GitHub integration, which from now on will automatically populate the version field using the git tag of your GitHub release.
-You don't have to worry about all GitHub releases that have been already published on Zenodo - they have all been updated with their corresponding release tags.</p>
-<h4>Does this affect the order of the record versions?</h4>
-<p>No, the order of the record's versions remains as before, i.e.: record versions are ordered chronologically by the record creation time.</p>
 </div>
   
   <br />

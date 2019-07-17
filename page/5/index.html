@@ -65,6 +65,83 @@
 
   
     
+<a href="../../2017/07/31/gsoc-and-zenodo-update/"><h1>Google Summer of Code and Zenodo summer update</h1></a>
+
+<p class="meta">
+  by
+  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
+  Krzysztof Nowak
+  on July 31, 2017
+</p>
+<hr />
+<div class="body"><h2>Google Summer of Code 2017</h2>
+<p>Zenodo has been taking part in Google Summer of Code 2017 and since June two
+students, Aman Jain and Xiao Meng, have been working with our team on
+introducing two exciting features to Zenodo by the end of the summer.</p>
+<p>Aman Jain's project will introduce public user profiles on Zenodo that will
+allow our users to share and show case their uploads on Zenodo.</p>
+<p>Xiao Meng's project introduces a new backend files processing module, which will
+enable us to e.g. extract the metadata from the PDF documents and use that
+information to improve search or easy pre-filling of upload forms.</p>
+<h2>New feature: support contact form</h2>
+<p>Thanks to Aman Jain, one of our GSoC students, you can now contact us more
+efficiently through a contact form available at
+<a href="https://zenodo.org/support">zenodo.org/support</a>. This will allow us to
+organize and resolve our support requests better and faster.</p>
+<h2>New feature: logged in devices</h2>
+<p>We recently updated Zenodo to the latest Invenio version which brought along a
+new feature that allow users to view all devices currently logged into their
+account. This security feature allow you to remotely log out of devices in case
+you e.g. forgot to logout of your Zenodo account on a public computer.</p>
+<p>You can view all currently logged-in devices by navigating to the
+<a href="https://zenodo.org/account/settings/security/">Security</a> tab in your account
+settings.</p>
+<p><img src="../../2017/07/31/gsoc-and-zenodo-update/active_sessions.png" alt="Active sessions"></p>
+<h2>New feature: status page</h2>
+<p>On the footer of all Zenodo pages you will now find a "Status" hyperlink
+(<a href="https://status.zenodo.org/">status.zenodo.org</a>), which will show you status
+of Zenodo and uptime statistics for Zenodo pages and services.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
+<a href="../../2017/07/19/upload-storage-incident/"><h1>Upload storage incident</h1></a>
+
+<p class="meta">
+  by
+  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+  Lars Holm Nielsen
+  on July 19, 2017
+</p>
+<hr />
+<div class="body"><h4>What happened?</h4>
+<p>As a result of a regular automatic file integrity check, as well as some user reports, we have discovered that 18 files uploaded to Zenodo after June 21st this year were not stored successfully. Despite serious efforts we have not been able to recover any of these 18 files from the CERN storage servers.</p>
+<h4>How did it happen?</h4>
+<p>We are taking this incident very seriously and have thoroughly investigated what happened. The root cause was the coincidence of two software bugs; one bug was found in the underlying disk storage system and the other bug was found in the client software that our web servers uses to connect to the disk storage system. The two bugs were activated on June 21st when our underlying CERN disk storage system was upgraded to a new major software release. Only recent files uploaded on or after June 21st could have been affected, and of those, only 18 out of the 15,000 files uploaded to Zenodo since June 21st were actually affected.</p>
+<p>An in-depth explanation of the incident is provided below.</p>
+<h4>Is it fixed?</h4>
+<p>Yes. We have already deployed fixes for the two software bugs. We have also taken further measures to ensure similar issues cannot happen. Even though it was good that our file integrity checks caught the errors, we have taken steps to improve this monitoring and ensure that we are alerted immediately in the future.</p>
+<h4>Is my file affected?</h4>
+<p>We have personally contacted all affected users by email, and since only a tiny fraction of recently uploaded files were affected we are hoping to recover all files from their respective uploaders.</p>
+<h4>Why could you not recover the files?</h4>
+<p>The reason we could not recover any of the files was because the files was never stored on our storage system, and thus our backups did also not have the file (see in-depth explanation below). The information we do have is metadata such as the file size and file fingerprint (MD5 checksum) as these a calculated on the web server side. This information allows us to check if files recovered from the respective uploaders is indeed the exact same files.</p>
+<h4>What measures are you taking to prevent this in the future?</h4>
+<p>We are operating complex systems with tens of terabytes of data and millions of files, and we anticipate failures to inevitably happen. That's also why we go to a great deal of length to safeguard files that users upload on Zenodo. In this case, one of our many checks also caught the problem, however with a delay of three weeks instead of immediately. We have now measures in place that ensures we catch a similar problem right away, and will continue to proactively anticipate other types of failures and build countermeasures against them as part of our preservation strategy.</p>
+<h4>In-depth explanation of the incident</h4>
+<p>When a user uploads a file to Zenodo, the file is streamed through one of our web servers down to a storage server in our disk storage system. The disk storage system then immediately replicates the file to another storage server in the cluster before sending back a response to the web server that the file was successfully written to disk. On a successful write, the web server will then record metadata about the file in our database and let the user know the file was successfully uploaded.</p>
+<p>One of the software bugs affected the underlying client library that Zenodo uses to connect to the storage system. After a complete file was sent from the web server to the storage system, the client library did not properly check the final reply from the storage system for errors. This meant that some particular errors reported by the storage system would not be caught by the client library and lead the web server to think that the file was written successfully to disk when in fact there was an error.</p>
+<p>The other software bug was found in the new version of the disk storage system software. Once the storage server had received the entire file it would try to replicate the file to another storage server in the cluster. If this other storage server was unresponsive (e.g. due to high workload or network congestion), the replication operation would timeout. The storage server would then proceed to cleanup the file (i.e. delete it) and send back an error reply.</p>
+<p>Thus, when a file replication operation failed in the storage system, the client library did not catch that there had been an error, leading the web server to think the file was successfully written to disk when in fact the storage system had never stored the file. This error did not expose itself prior to June 21st,  because the previous software version on the disk storage system would automatically recover from the replication failure and not send an error reply back. As a result of this incident, the disk storage system software will reinstantiate the previous behaviour and try to immediately recover from the replication failure.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2017/05/30/doi-versioning-launched/"><h1>Zenodo now supports DOI versioning!</h1></a>
 
 <p class="meta">
@@ -79,73 +156,6 @@
 <p>This update comes hot on the heels of the recent relaunch which made Zenodo faster, improved GitHub integration, integrated support for Horizon 2020 grant information, and enabled 50 gigabyte uploads!</p>
 <p>Read more about the inner workings of new feature in the <a href="https://help.zenodo.org#versioning">DOI Versioning FAQ</a>.</p>
 <p><img src="../../2017/05/30/doi-versioning-launched/screenshot2.png" alt="DOI versioning for Zenodo"></p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/03/10/google-summer-of-code-2017/"><h1>Join Zenodo at Google Summer of Code 2017</h1></a>
-
-<p class="meta">
-  by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
-  Krzysztof Nowak
-  on March 10, 2017
-</p>
-<hr />
-<div class="body"><div align="center" style="padding: 10px;"><img src="//developers.google.com/open-source/gsoc/resources/downloads/GSoC-logo-horizontal.svg" width="50%" alt="Google Summer of Code 2017"></div><p>We are happy to announce that Zenodo has been accepted as a mentoring organisation for <a href="https://summerofcode.withgoogle.com/organizations/4630502569934848/">Google Summer of Code 2017</a>!</p>
-<p>It's a great opportunity for university students to contribute to Zenodo and make an impact on Open Science.
-By applying with us you will be able to work on several projects such as public researcher profiles, research data metadata extraction, spam filtering (using machine learning!) and more.</p>
-<p>See our full <strong><a href="https://github.com/zenodo/zenodo/wiki/Google-Summer-of-Code-2017#ideas-list">list of project ideas</a></strong>.</p>
-<h3>What is Google Summer of Code (GSoC)?</h3>
-<p>GSoC involves a remote, full-time software development work for three months during summer.
-An exempt from the official GSoC page:</p>
-<blockquote><p>"Google Summer of Code is a global program focused on introducing students to open source software development.
-  Students work on a 3 month programming project with an open source organization during their break from university."</p>
-<p>(...)</p>
-<p>"As a part of Google Summer of Code, student participants are paired with a mentor from the participating organizations, gaining exposure to real-world software development and techniques.
-  Students have the opportunity to spend the break between their school semesters earning a stipend while working in areas related to their interests.
-  In turn, the participating organizations are able to identify and bring in new developers who implement new features and hopefully continue to contribute to open source even after the program is over.
-  Most importantly, more code is created and released for the use and benefit of all."</p>
-</blockquote>
-<p>More information on the <a href="https://summerofcode.withgoogle.com/about/">official GSoC page</a>.</p>
-<h3>Who can take part?</h3>
-<p>In short, university students from accredited universities that are at least 18 years of age and eligible to work in their country.
-Full conditions can be found in the <a href="https://developers.google.com/open-source/gsoc/faq">GSoC FAQ</a> under <em>"What are the eligibility requirements for participation?"</em>.</p>
-<p>Since Zenodo is a web platform, a good knowledge of Python, web development, relational databases and object oriented programming is required if you want to apply with us.</p>
-<h3>When does it start?</h3>
-<p>It has already started! You still have time until 3rd of April to submit a proposal with us, but if you're considering applying, you should start getting familiar our project as soon as possible.
-This will increase your chances of being selected! See the <a href="https://developers.google.com/open-source/gsoc/timeline">GSoC Timeline</a>.</p>
-<h3>Interested?</h3>
-<p>Take a look at our organization <a href="https://summerofcode.withgoogle.com/organizations/4630502569934848/">profile page</a>
-and find more information on how to apply on our <a href="https://github.com/zenodo/zenodo/wiki/Google-Summer-of-Code-2017">GSoC Wiki</a>!</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/02/28/zenodo-docs-have-landed/"><h1>The Zenodo Blog has landed!</h1></a>
-
-<p class="meta">
-  by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
-  Lars Holm Nielsen
-  on February 28, 2017
-</p>
-<hr />
-<div class="body"><p>After a week-long sprint, we have the pleasure to present the new look-and-feel for Zenodo documentation as well as introduce the Zenodo Blog.
-From now on, in addition to broadcasting on Twitter <a href="https://twitter.com/zenodo_org">@zenodo_org</a>, all major announcements will also happen on this blog. We have also launched four new sub-domains, which topically separate the content into:</p>
-<ul>
-<li><a href="https://blog.zenodo.org">blog.zenodo.org</a> - Blog with major announcements and articles written by our team members.</li>
-<li><a href="https://developers.zenodo.org">developers.zenodo.org</a> - Refreshed REST API documentation.</li>
-<li><a href="https://help.zenodo.org">help.zenodo.org</a> - Help pages with FAQ and features showcase.</li>
-<li><a href="https://about.zenodo.org">about.zenodo.org</a> - General information as well as terms of use, policies and contact information.</li>
-</ul>
-<p>During the spring we will gradually be launching new content on these pages so stay tuned. Write you soon!</p>
 </div>
   
   <br />
