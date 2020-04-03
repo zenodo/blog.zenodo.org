@@ -65,6 +65,48 @@
 
   
     
+<a href="../../2019/01/10/2019-01-10-asclepias/"><h1>Software citations now available in Zenodo</h1></a>
+
+<p class="meta">
+  by
+  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+  Lars Holm Nielsen
+  on January 10, 2019
+</p>
+<hr />
+<div class="body"><p>We are proud to announce the release of enhancements which significantly facilitate scientific software citation and discovery. These represent the successful outcome of the Asclepias project, funded by the <a href="https://sloan.org">Alfred P. Sloan Foundation</a>, and involving the <a href="https://aas.org">American Astronomical Society</a>, <a href="https://ui.adsabs.harvard.edu">NASA ADS</a> bibliographic index and the <a href="https://www.zenodo.org">Zenodo</a> repository.</p>
+<h3>NASA Astrophysics Data System</h3>
+<p>The NASA ADS now extracts and indexes cited software repositories published with the <a href="https://www.datacite.org">DataCite</a> registry, making them discoverable through its platform and resulting in new metrics for software use and reuse in astronomical research.</p>
+<p><img src="../../2019/01/10/2019-01-10-asclepias/ads.png" alt="NASA ADS"></p>
+<h3>Zenodo</h3>
+<p>Zenodo, using <a href="https://asclepias-broker.readthedocs.io/">citation brokering software</a> built for the Asclepias project, receives software citations from ADS and other sources, and displays them on the repository's software records.</p>
+<p><img src="../../2019/01/10/2019-01-10-asclepias/zenodo.png" alt="Zenodo citations"></p>
+<h3>Discover and cite software</h3>
+<p>These infrastructure updates provide important new tools for authors of research papers and developers of scientific software.</p>
+<ul>
+<li><p><strong>Authors</strong> can now find a wider selection of citable software records in ADS, which can be directly be incorporated into their manuscripts using the ADS tools that astronomers rely upon.</p>
+</li>
+<li><p><strong>Developers</strong> who preserve their software by creating persistent citable entries, e.g. in Zenodo, can discover their software's reuse metrics right on their Zenodo repository's landing page.</p>
+</li>
+<li><p><strong>Astronomers</strong>, who often work across such divisions, can use ADS to track all of their publication and software research outputs.</p>
+</li>
+</ul>
+<h3>Tracking citations</h3>
+<p>ADS and Zenodo rely upon a combination of full-text content from Publishers as well as metadata from the <a href="https://www.datacite.org">DataCite</a> and <a href="https://www.crossref.org">CrossRef</a> registries to provide these services. High fidelity indexing and tracking of software objects in the literature is thus dependent on careful, intentional work by developers, authors, and publishers when archiving and citing these digital objects. With these enhancements, ADS and Zenodo now provide citation minting and tracking capabilities which comply with the recommendations of the <a href="https://doi.org/10.7717/peerj-cs.86">Force11</a> software citation implementation working group.</p>
+<p><strong>More information:</strong></p>
+<ul>
+<li><a href="https://help.zenodo.org/#citations">Zenodo FAQ on citations</a></li>
+<li><a href="https://doi.org/10.5281/zenodo.11813">Example in Zenodo</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/#abs/2014zndo.....11813N/abstract">Example in NASA ADS</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/#search/p_=0&amp;q=doctype%3Asoftware%20bibstem%3Azndo&amp;sort=citation_count%20desc%2C%20bibcode%20desc">Zenodo software records in NASA ADS</a></li>
+</ul>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2018/11/22/2018-11-22-new-licenses/"><h1>New (and old) licenses are here!</h1></a>
 
 <p class="meta">
@@ -118,43 +160,6 @@ form</a>.</p>
 <p>No, the files (the payload of every record) are stored outside the database which only stores the metadata of the records. These files are stored in multiple copies on multiples servers before a new record is completed in the database. However accessing and serving the files requires the database record that points to them. In addition, we write submission information packages (SIPs) to disk which contain both the metadata and uploaded files, however these SIPs are not written to disk immediately, and thus don’t help recover data close to a crash.</p>
 <h4>What did we learn?</h4>
 <p>It is said that every challenge faced makes us stronger! Even though we have numerous protection and self-healing mechanisms at each level of the stack they were not enough, and did not protect against combinatorial failures. We are thus taking this incident very seriously and thoroughly investigating what happened and what can be improved to avoid even more failure modes and to make recovery quicker. One track we are looking at is replica configurations that would isolate crash corruptions to one node.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2018/07/18/2018-07-18-usage-statistics/"><h1>Usage statistics launched!</h1></a>
-
-<p class="meta">
-  by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
-  Alex Ioannidis
-  on July 18, 2018
-</p>
-<hr />
-<div class="body"><p>We are happy to announce the launch of usage statistics on Zenodo. From today,
-you will find the number of views and downloads on record pages, and you can
-sort search results by
-<a href="https://zenodo.org/search?sort=mostviewed">most viewed</a>.
-By default we roll-up usage statistics for all versions of a record. However,
-it is also possible to see detailed usage statistics for the specific version
-of a record.</p>
-<h3>Privacy and standards compliant</h3>
-<p>We strongly believe in user’s right to privacy, thus we have spend a lot of
-time to design our system to ensure all tracking is completely anonymized. Our
-usage statistics is further tracked according to industry standards such as
-the <a href="https://www.projectcounter.org/code-of-practice-sections/general-information/">COUNTER Code of Practice</a>
-as well as the <a href="https://peerj.com/preprints/26505/">Code of Practice for Research Data Usage Metrics</a>
-and thus allows you to compare metrics from Zenodo with other compliant
-repositories. You can read much more about this, and exactly how and what we
-track in our <a href="https://help.zenodo.org/#statistics">FAQ</a>.</p>
-<p>The launch today, also only marks the beginning. We will later also be adding
-usage statistics e.g for your communities, so stay tuned!</p>
-<p>If you have any questions or feedback (positive and negative) don’t hesitate
-to <a href="https://zenodo.org/support">get in touch</a> with us.</p>
-<p><img src="../../2018/07/18/2018-07-18-usage-statistics/usage-stats.png" alt="Zenodo Usage Statistics"></p>
 </div>
   
   <br />

@@ -65,6 +65,29 @@
 
   
     
+<a href="../../2019/07/16/2019-07-16-roadmap/"><h1>Roadmap update</h1></a>
+
+<p class="meta">
+  by
+  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+  Lars Holm Nielsen
+  on July 16, 2019
+</p>
+<hr />
+<div class="body"><p>Today, we have updated our <a href="http://about.zenodo.org/roadmap/">public roadmap</a>. Over the summer we have reduced development capacity as staff is on holidays, and thus we're focusing on minor improvements:</p>
+<ul>
+<li><strong>Citations</strong>: We're improving the regular updates of citation data from our data sources such as NASA ADS, OpenAIRE, CrossRef and EuropePMC.</li>
+<li><strong>GitHub improvements</strong>: We're making some minor optimizations in the release processing workflows.</li>
+<li><strong>Infrastructure</strong>: We're growing rapidly, and thus we're in need of upgrading our Elasticsearch cluster.</li>
+</ul>
+<p>Our biggest target right now is the preparations for importing a dataset of 300.000 biodiversity treatments records into Zenodo in collaboration with Plazi and Pensoft. We hope to be able to present this work around end-October. These improvements will bring support for geospatioal, temporal and method metadata to Zenodo.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2019/07/15/2019-07-15-xss-vulnerability/"><h1>Cross-Site Scripting vulnerability</h1></a>
 
 <p class="meta">
@@ -126,48 +149,6 @@
 <p>No, the files (the payload of every record) are stored outside the database which only stores the metadata of the records. These files are stored in multiple copies on multiples servers before a new record is completed in the database. However accessing and serving the files requires the database record that points to them.</p>
 <h4>Next steps</h4>
 <p>We are taking this incident very seriously and thoroughly investigating what happened and what can be improved to avoid even more failure modes and to make recovery quicker. A post-mortem is planned for next week with the involved teams, after which more will be communicated.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2019/01/10/2019-01-10-asclepias/"><h1>Software citations now available in Zenodo</h1></a>
-
-<p class="meta">
-  by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
-  Lars Holm Nielsen
-  on January 10, 2019
-</p>
-<hr />
-<div class="body"><p>We are proud to announce the release of enhancements which significantly facilitate scientific software citation and discovery. These represent the successful outcome of the Asclepias project, funded by the <a href="https://sloan.org">Alfred P. Sloan Foundation</a>, and involving the <a href="https://aas.org">American Astronomical Society</a>, <a href="https://ui.adsabs.harvard.edu">NASA ADS</a> bibliographic index and the <a href="https://www.zenodo.org">Zenodo</a> repository.</p>
-<h3>NASA Astrophysics Data System</h3>
-<p>The NASA ADS now extracts and indexes cited software repositories published with the <a href="https://www.datacite.org">DataCite</a> registry, making them discoverable through its platform and resulting in new metrics for software use and reuse in astronomical research.</p>
-<p><img src="../../2019/01/10/2019-01-10-asclepias/ads.png" alt="NASA ADS"></p>
-<h3>Zenodo</h3>
-<p>Zenodo, using <a href="https://asclepias-broker.readthedocs.io/">citation brokering software</a> built for the Asclepias project, receives software citations from ADS and other sources, and displays them on the repository's software records.</p>
-<p><img src="../../2019/01/10/2019-01-10-asclepias/zenodo.png" alt="Zenodo citations"></p>
-<h3>Discover and cite software</h3>
-<p>These infrastructure updates provide important new tools for authors of research papers and developers of scientific software.</p>
-<ul>
-<li><p><strong>Authors</strong> can now find a wider selection of citable software records in ADS, which can be directly be incorporated into their manuscripts using the ADS tools that astronomers rely upon.</p>
-</li>
-<li><p><strong>Developers</strong> who preserve their software by creating persistent citable entries, e.g. in Zenodo, can discover their software's reuse metrics right on their Zenodo repository's landing page.</p>
-</li>
-<li><p><strong>Astronomers</strong>, who often work across such divisions, can use ADS to track all of their publication and software research outputs.</p>
-</li>
-</ul>
-<h3>Tracking citations</h3>
-<p>ADS and Zenodo rely upon a combination of full-text content from Publishers as well as metadata from the <a href="https://www.datacite.org">DataCite</a> and <a href="https://www.crossref.org">CrossRef</a> registries to provide these services. High fidelity indexing and tracking of software objects in the literature is thus dependent on careful, intentional work by developers, authors, and publishers when archiving and citing these digital objects. With these enhancements, ADS and Zenodo now provide citation minting and tracking capabilities which comply with the recommendations of the <a href="https://doi.org/10.7717/peerj-cs.86">Force11</a> software citation implementation working group.</p>
-<p><strong>More information:</strong></p>
-<ul>
-<li><a href="https://help.zenodo.org/#citations">Zenodo FAQ on citations</a></li>
-<li><a href="https://doi.org/10.5281/zenodo.11813">Example in Zenodo</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/#abs/2014zndo.....11813N/abstract">Example in NASA ADS</a></li>
-<li><a href="https://ui.adsabs.harvard.edu/#search/p_=0&amp;q=doctype%3Asoftware%20bibstem%3Azndo&amp;sort=citation_count%20desc%2C%20bibcode%20desc">Zenodo software records in NASA ADS</a></li>
-</ul>
 </div>
   
   <br />
