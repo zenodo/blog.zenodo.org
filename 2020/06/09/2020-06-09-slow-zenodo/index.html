@@ -4,28 +4,27 @@
 <meta property="og:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
 
 
-<meta property="og:title" content="Zenodo - Research. Shared." />
+<meta property="og:title" content="Slow or inaccessible zenodo.org" />
 
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
 
 
-<meta property="og:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@zenodo_org" />
 <meta name="twitter:creator" content="@zenodo_org" />
 
-<meta name="twitter:title" content="Zenodo - Research. Shared." />
+<meta property="og:title" content="Slow or inaccessible zenodo.org" />
 
 
 
 <meta name="twitter:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
 
 <meta name="twitter:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
-<link rel="stylesheet" href="../../static/zenodo.css">
-<link rel="stylesheet" href="../../static/style.css">
-<link rel="stylesheet" href="../../static/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../../static/zenodo.css">
+<link rel="stylesheet" href="../../../../static/style.css">
+<link rel="stylesheet" href="../../../../static/font-awesome/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
 <title>Zenodo</title>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -62,96 +61,26 @@
       <div class="row">
         <div class="col-md-12">
           
-
   
     
-<a href="../../2017/03/10/google-summer-of-code-2017/"><h1>Join Zenodo at Google Summer of Code 2017</h1></a>
+<h1>Slow or inaccessible zenodo.org</h1>
 
 <p class="meta">
   by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
-  Krzysztof Nowak
-  on March 10, 2017
+  <img class="img-rounded" width=18 height=18 src="../../../../static/img/authors/aioannidis.jpg" />
+  Alex Ioannidis
+  on June 9, 2020
 </p>
 <hr />
-<div class="body"><div align="center" style="padding: 10px;"><img src="//developers.google.com/open-source/gsoc/resources/downloads/GSoC-logo-horizontal.svg" width="50%" alt="Google Summer of Code 2017"></div><p>We are happy to announce that Zenodo has been accepted as a mentoring organisation for <a href="https://summerofcode.withgoogle.com/organizations/4630502569934848/">Google Summer of Code 2017</a>!</p>
-<p>It's a great opportunity for university students to contribute to Zenodo and make an impact on Open Science.
-By applying with us you will be able to work on several projects such as public researcher profiles, research data metadata extraction, spam filtering (using machine learning!) and more.</p>
-<p>See our full <strong><a href="https://github.com/zenodo/zenodo/wiki/Google-Summer-of-Code-2017#ideas-list">list of project ideas</a></strong>.</p>
-<h3>What is Google Summer of Code (GSoC)?</h3>
-<p>GSoC involves a remote, full-time software development work for three months during summer.
-An exempt from the official GSoC page:</p>
-<blockquote><p>"Google Summer of Code is a global program focused on introducing students to open source software development.
-  Students work on a 3 month programming project with an open source organization during their break from university."</p>
-<p>(...)</p>
-<p>"As a part of Google Summer of Code, student participants are paired with a mentor from the participating organizations, gaining exposure to real-world software development and techniques.
-  Students have the opportunity to spend the break between their school semesters earning a stipend while working in areas related to their interests.
-  In turn, the participating organizations are able to identify and bring in new developers who implement new features and hopefully continue to contribute to open source even after the program is over.
-  Most importantly, more code is created and released for the use and benefit of all."</p>
-</blockquote>
-<p>More information on the <a href="https://summerofcode.withgoogle.com/about/">official GSoC page</a>.</p>
-<h3>Who can take part?</h3>
-<p>In short, university students from accredited universities that are at least 18 years of age and eligible to work in their country.
-Full conditions can be found in the <a href="https://developers.google.com/open-source/gsoc/faq">GSoC FAQ</a> under <em>"What are the eligibility requirements for participation?"</em>.</p>
-<p>Since Zenodo is a web platform, a good knowledge of Python, web development, relational databases and object oriented programming is required if you want to apply with us.</p>
-<h3>When does it start?</h3>
-<p>It has already started! You still have time until 3rd of April to submit a proposal with us, but if you're considering applying, you should start getting familiar our project as soon as possible.
-This will increase your chances of being selected! See the <a href="https://developers.google.com/open-source/gsoc/timeline">GSoC Timeline</a>.</p>
-<h3>Interested?</h3>
-<p>Take a look at our organization <a href="https://summerofcode.withgoogle.com/organizations/4630502569934848/">profile page</a>
-and find more information on how to apply on our <a href="https://github.com/zenodo/zenodo/wiki/Google-Summer-of-Code-2017">GSoC Wiki</a>!</p>
+<div class="body"><p>During the past week, our users may have experienced that Zenodo was slow or inaccessible at certain times. This was caused by several independent incidents during the past week.</p>
+<h4>May 30th, stale database connections (resolved)</h4>
+<p>On May 30th, a large fraction of requests to zenodo.org would result in an error. The root cause was stale connections between the database server and the network file storage hosting the database files due to a faulty client software version. The incident happened during European night time outside normal business hours and required the intervention of the CERN database infrastructure experts to fully resolve the issue, which unfortunately meant it took a total of 10 hours to fully investigate and resolve the issue.</p>
+<h4>Abnormal traffic patterns (ongoing)</h4>
+<p>During the past week, Zenodo has been hit by abnormal traffic patterns from automated clients for which our multiple existing measures (e.g. rate-limiting) have not been able to keep the traffic flow properly balanced between clients accessing zenodo.org.</p>
+<p>All Zenodo staff are assigned to resolving the issue, and we have implemented several measures during the past week that unfortunately have not been enough to get the traffic flow under control. We continue to implement further measures, however, some of these operations are comparable to changing tires on a truck driving at full speed and thus takes time and requires utmost care.</p>
+<p>We hope to soon have traffic flow under control, and apologise for the inconveniences it may have caused.</p>
 </div>
   
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/02/28/zenodo-docs-have-landed/"><h1>The Zenodo Blog has landed!</h1></a>
-
-<p class="meta">
-  by
-  <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
-  Lars Holm Nielsen
-  on February 28, 2017
-</p>
-<hr />
-<div class="body"><p>After a week-long sprint, we have the pleasure to present the new look-and-feel for Zenodo documentation as well as introduce the Zenodo Blog.
-From now on, in addition to broadcasting on Twitter <a href="https://twitter.com/zenodo_org">@zenodo_org</a>, all major announcements will also happen on this blog. We have also launched four new sub-domains, which topically separate the content into:</p>
-<ul>
-<li><a href="https://blog.zenodo.org">blog.zenodo.org</a> - Blog with major announcements and articles written by our team members.</li>
-<li><a href="https://developers.zenodo.org">developers.zenodo.org</a> - Refreshed REST API documentation.</li>
-<li><a href="https://help.zenodo.org">help.zenodo.org</a> - Help pages with FAQ and features showcase.</li>
-<li><a href="https://about.zenodo.org">about.zenodo.org</a> - General information as well as terms of use, policies and contact information.</li>
-</ul>
-<p>During the spring we will gradually be launching new content on these pages so stay tuned. Write you soon!</p>
-</div>
-  
-  <br />
-  <br />
-
-
-  
-<div class="pagination">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 text-center">
-        
-      </div>
-      <div class="col-md-4 text-center">
-
-        <b><a href="/all">All</a></b>
-      </div>
-      <div class="col-md-4 text-center">
-        
-          <b><a href="../../page/6/">Newer</a></b>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
         </div>
       </div>
