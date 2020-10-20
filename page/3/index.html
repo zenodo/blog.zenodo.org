@@ -65,6 +65,36 @@
 
   
     
+<a href="../../2019/07/17/2019-07-17-dryad-partnership/"><h1>Funded Partnership Brings Dryad and Zenodo Closer</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+    
+    Lars Holm Nielsen,
+  
+  on July 17, 2019
+</p>
+<hr />
+<div class="body"><p><em>Cross posted at <a href="http://blog.datadryad.org/2019/07/17/funded-partnership-brings-dryad-and-zenodo-closer/">Dryad</a></em></p>
+<p>With increasing mandates and initiatives around open data and software, researchers commonly have to make a choice about where to deposit their non-article outputs. Unfortunately, systems that are built to accommodate these objects work separately and can make the process more difficult. As a result, data, code, figures, and other outputs go to a variety of disconnected places, or improper homes (i.e. code with the wrong license or data not curated). To tackle this issue, and make open research best practices more seamless for researchers, we are thrilled to announce a partnership between Dryad and Zenodo.</p>
+<p><img src="../../2019/07/17/2019-07-17-dryad-partnership/dryad-logo.png" alt="Dryad"></p>
+<p><a href="https://datadryad.org">Dryad</a> is a leader in data curation and data publishing. For the last ten years, Dryad has focused primarily on research data, supporting a CC0 license and manually curating each incoming dataset. <a href="https://www.zenodo.org">Zenodo</a>, a general use repository hosted at <a href="http://home.cern">CERN</a>, has been paving the way in <a href="https://blog.zenodo.org/2019/01/10/2019-01-10-asclepias/">software citation and publishing</a>. As long time players in the open science movement, we believe that we can advance open science and open-source projects further by working together.  Instead of working individually to broaden each our scopes, building competitive features, and inefficiently using our limited resources, Dryad and Zenodo will be working together to support more seamless workflows that make the process easier for researchers.</p>
+<p>To jumpstart this collaboration, we are proud to have been awarded an Alfred P. Sloan Foundation grant that will enable us to co-develop new solutions focused on supporting researcher and publisher workflows as well as best practices in data and software curation. By focusing on integrations between our systems, leveraging data and software expertise, we can both extend the reach of our services and open up more opportunities for broader research communities.  We are looking forward to re-imagining the submission process for researchers and how we can better support our journal publishing and institutional communities along the way.</p>
+<p>Our leadership teams are dedicated to the future of our co-development projects:</p>
+<p><em>"Dryad has long admired the work Zenodo does in our shared space and we are thrilled to finally find a way to collaborate on a project that benefits researchers around the globe. The Dryad-Zenodo integration is an excellent example of how two like-minded organizations can join together in a shared vision"</em>, says Melissanne Scheld, Executive Director at Dryad.</p>
+<p><em>"Dryad and Zenodo have always shared the same Open Science values, this is why we are very excited to partner up with such a talented team and bring the future of scientific publication one step closer to reality. We look forward to this inspiring collaboration with Dryad as well as helping the research community to move science forward,</em> says Jose Benito Gonzalez, Head of Digital Repositories at CERN/Zenodo.</p>
+<p>As we embark on this open-source project and partnership together, we invite community feedback and input.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2019/07/16/2019-07-16-roadmap/"><h1>Roadmap update</h1></a>
 
 <p class="meta">
@@ -124,46 +154,6 @@
 <p>The public disclosure of the issue has been coordinated with security relases of Invenio, which is the underlying framework that Zenodo is based on.</p>
 <p>As a standard measure and after patching Zenodo, we reviewed the Invenio source code for potential similar issues to those identified in Zenodo. This led to the discovery of three additional XSS vulnerabilities.</p>
 <p>See details on <a href="http://inveniosoftware.org/blog/security-advisor-20190715/">http://inveniosoftware.org/blog/security-advisor-20190715/</a>.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2019/05/17/2019-05-17-database-incident/"><h1>Incident with database infrastructure</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
-    
-    Alex Ioannidis,
-  
-  on May 17, 2019
-</p>
-<hr />
-<div class="body"><h4>What happened?</h4>
-<p>On Thursday May 16 at 08:30 UTC two database instances were accessing the same physical database files (hosted on an NFS filer) for the primary Zenodo database for a short amount of time. This caused a corruption to both the database files as well as the transaction logs. The corruptions caused intermittent errors for users throughout the day, until we at 15:30 UTC took Zenodo offline.</p>
-<p>Zenodo was back online 18:30 UTC May 17th.</p>
-<h4>How did it happen?</h4>
-<p>On Thursday May 16 at 05:50 UTC the Zenodo database was migrated from an old host to a new host, because of a scheduled urgent intervention on the virtual machine hypervisor hosting the old host.</p>
-<p>The script in charge of the migration succeeded but left behind certain configuration files on the old host due to a bug in the script.</p>
-<p>At 08:30 UTC the hypervisor and consequently the old host was rebooted. During the boot sequence the old database instance was automatically started and connected to the Zenodo database files and transaction logs hosted on an NFS network filer.</p>
-<p>The access by two database instances to the same underlying database files corrupted parts of the files, and most importantly it also corrupted the transactions logs.</p>
-<h4>Is it fixed?</h4>
-<p>Through hours of manual validation of the integrity of our 40 million rows large database, as well as validation against our webserver access logs, we have recovered the entire database. We have detected discrepancies in a handful of records, that we have temporarily disabled. We are able to fully recover these records from other sources, and hope to have the work finished during next week.</p>
-<h4>Is my record affected?</h4>
-<p>Only a handful of records (98 out of 9200) submitted during the day of May 16th are affected. We have temporarily disabled these records, until we can recover them fully during next week.</p>
-<p>If you notice any issues, don't hesitate to contact us via <a href="https://zenodo.org/support">our support page</a>.</p>
-<h4>Why so long downtime?</h4>
-<p>Our prime concern is to avoid data loss, so we chose the harder, longer path to recover in order to minimise data loss rather than maximise uptime. Using one of our 12-hourly backups would have meant +6 hours of data loss. The transaction logs were corrupted by the two database instances, which otherwise would have allowed us to recover in about an one hour. All corruptions thus had to be fixed manually by our team of four senior engineers from the CERN database team and Zenodo operations team.</p>
-<h4>Were my files at risk?</h4>
-<p>No, the files (the payload of every record) are stored outside the database which only stores the metadata of the records. These files are stored in multiple copies on multiples servers before a new record is completed in the database. However accessing and serving the files requires the database record that points to them.</p>
-<h4>Next steps</h4>
-<p>We are taking this incident very seriously and thoroughly investigating what happened and what can be improved to avoid even more failure modes and to make recovery quicker. A post-mortem is planned for next week with the involved teams, after which more will be communicated.</p>
 </div>
   
   <br />
