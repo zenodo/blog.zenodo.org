@@ -65,6 +65,59 @@
 
   
     
+<a href="../../2017/10/10/grants-and-language-update/"><h1>Extended grant support, ORCID and language field.</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
+    
+    Krzysztof Nowak,
+  
+  on October 10, 2017
+</p>
+<hr />
+<div class="body"><p>Today, we are introducing three additions to Zenodo:</p>
+<ol>
+<li>Extended grant support</li>
+<li>Language field</li>
+<li>ORCID for authors</li>
+</ol>
+<h2>Extended grant support (powered by OpenAIRE)</h2>
+<p>We are expanding our grants database with over 620,000 grants from 8 new funders such as the National Science Foundation (US) and Wellcome Trust (UK) - all thanks to <a href="https://openaire.eu/">OpenAIRE</a>'s ever growing grants database.</p>
+<p><img src="../../2017/10/10/grants-and-language-update/grants.png" alt="Zenodo OpenAIRE grants database"></p>
+<p>So far we have only been supporting grants from the European Commission (FP7 and Horizon 2020). Today our dataset has grown and contains grants from the following funders:</p>
+<ul>
+<li>National Science Foundation (USA) - 497646 grants</li>
+<li>European Commission (EU) - 39409 grants</li>
+<li>Foundation for Science and Technology (Portugal) - 37277 grants</li>
+<li>National Health and Medical Research Council (Australia) - 24354 grants</li>
+<li>Netherlands Organisation for Scientific Research (The Netherlands) - 24180 grants</li>
+<li>Australian Research Council (Australia) - 23011 grants</li>
+<li>Wellcome Trust (United Kingdom) - 12196 grants</li>
+<li>Ministry of Science and Education (Croatia) - 2120 grants</li>
+<li>Ministry of Education, Science and Technological Development (Serbia) - 777 grants</li>
+</ul>
+<p>which means that our grants database grew from nearly <strong>40,000</strong> to over <strong>660,000</strong> grants! We wouldn't have been able to do that if it wasn't for the OpenAIRE team and their hard work in collecting, maintaining and distributing the grants database for the benefit of Open Science!</p>
+<h2>Language field</h2>
+<p>Today we are also adding a new language field to our metadata, which allows you to record the primary language of an upload. You can select the language in the upload form simply by starting to type the English name, a 2-letter or a 3-letter ISO 639 code:</p>
+<p><img src="../../2017/10/10/grants-and-language-update/language.png" alt="Language for Zenodo"></p>
+<p>The new language field supports all languages defined in ISO 639-3, which in total defines 436 individual and macro-languages. For the full reference of language codes see the <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">Library of Congress ISO 639 Language List</a>.</p>
+<h4>What if my record contains more than one language?</h4>
+<p>The field is used to specify the primary language of the resource, hence if, e.g., a thesis is written in Danish and has an English abstract, then the primary language is Danish. Similarly, the primary language of a paper written in English, which is on the topic of Greek linguistics, thus containing a lot of text in Greek, is English.</p>
+<p>There are always cases where it is not possible to clearly determine the primary language, for example for a dataset containing the mapping between common Polish and French phrases. In those special cases you can always use ISO 639-3 code <a href="https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?code_ID=306"><code>mul</code> (Multiple Languages)</a>.</p>
+<h2>ORCID for authors</h2>
+<p>Last but not least, you can now include an author's ORCID under the <em>Authors</em> section of the metadata on the deposit web interface.
+<img src="../../2017/10/10/grants-and-language-update/orcid.png" alt="Zenodo author ORCID"></p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2017/07/31/gsoc-and-zenodo-update/"><h1>Google Summer of Code and Zenodo summer update</h1></a>
 
 <p class="meta">
@@ -145,32 +198,6 @@ of Zenodo and uptime statistics for Zenodo pages and services.</p>
 <p>One of the software bugs affected the underlying client library that Zenodo uses to connect to the storage system. After a complete file was sent from the web server to the storage system, the client library did not properly check the final reply from the storage system for errors. This meant that some particular errors reported by the storage system would not be caught by the client library and lead the web server to think that the file was written successfully to disk when in fact there was an error.</p>
 <p>The other software bug was found in the new version of the disk storage system software. Once the storage server had received the entire file it would try to replicate the file to another storage server in the cluster. If this other storage server was unresponsive (e.g. due to high workload or network congestion), the replication operation would timeout. The storage server would then proceed to cleanup the file (i.e. delete it) and send back an error reply.</p>
 <p>Thus, when a file replication operation failed in the storage system, the client library did not catch that there had been an error, leading the web server to think the file was successfully written to disk when in fact the storage system had never stored the file. This error did not expose itself prior to June 21st,  because the previous software version on the disk storage system would automatically recover from the replication failure and not send an error reply back. As a result of this incident, the disk storage system software will reinstantiate the previous behaviour and try to immediately recover from the replication failure.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/05/30/doi-versioning-launched/"><h1>Zenodo now supports DOI versioning!</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
-    
-    Lars Holm Nielsen,
-  
-  on May 30, 2017
-</p>
-<hr />
-<div class="body"><p>We are pleased to announce the launch of DOI versioning support in Zenodo - the open research repository from OpenAIRE and CERN. This new feature enables users to update the record’s files after they have been made public and researchers to easily cite either specific versions of a record or to cite, via a top-level DOI, all the versions of a record.</p>
-<p>DOI versioning support was one of our most requested features for Zenodo, and it has been co-developed by OpenAIRE’s Zenodo team and EUDAT’s B2SHARE team as an extension module for CERN’s Invenio digital repository platform, which powers both Zenodo and B2SHARE.</p>
-<p>This update comes hot on the heels of the recent relaunch which made Zenodo faster, improved GitHub integration, integrated support for Horizon 2020 grant information, and enabled 50 gigabyte uploads!</p>
-<p>Read more about the inner workings of new feature in the <a href="https://help.zenodo.org#versioning">DOI Versioning FAQ</a>.</p>
-<p><img src="../../2017/05/30/doi-versioning-launched/screenshot2.png" alt="DOI versioning for Zenodo"></p>
 </div>
   
   <br />
