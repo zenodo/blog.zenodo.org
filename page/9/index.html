@@ -1,0 +1,318 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<meta property="og:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
+
+
+<meta property="og:title" content="Zenodo - Research. Shared." />
+
+
+<meta property="og:type" content="website" />
+
+
+<meta property="og:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@zenodo_org" />
+<meta name="twitter:creator" content="@zenodo_org" />
+
+<meta name="twitter:title" content="Zenodo - Research. Shared." />
+
+
+
+<meta name="twitter:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
+
+<meta name="twitter:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
+<link rel="stylesheet" href="../../static/zenodo.css">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="stylesheet" href="../../static/font-awesome/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
+<title>Zenodo</title>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<body>
+  <header>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://zenodo.org"><img class="navbar-brand" src="/static/img/zenodo.svg" alt="Zenodo" /></a>
+          <span class="logo-divider"></span>
+          <span class="header-title" aria-label="header-title">Blog</span>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right toplist">
+            
+              <li><a href="https://about.zenodo.org">About</a></li>
+            
+              <li><a href="https://blog.zenodo.org">Blog</a></li>
+            
+              <li><a href="https://help.zenodo.org">Help</a></li>
+            
+              <li><a href="https://about.zenodo.org/projects">Projects</a></li>
+            
+              <li><a href="https://developers.zenodo.org">Developers</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="communities">
+    
+    
+    <div class="container body-container">
+      <div class="row">
+        <div class="col-md-12">
+          
+
+  
+    
+<a href="../../2017/11/02/version-field/"><h1>Version field launched!</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
+    
+    
+    
+    Alex Ioannidis,
+  
+  on November 2, 2017
+</p>
+<hr />
+<div class="body"><p>As of today, we have extended our metadata schema with the <code>version</code> term, so you can explicitly specify the version of your software, dataset, or any other type of upload.
+This allows you to use the version tags such as 1.2.1 or 2017.01 instead of the default version numbers such as 1, 2 or 3.
+The addition is part of our efforts to make software a citable, first-class citizen in the world of scientific research.</p>
+<p><img src="../../2017/11/02/version-field/version-field.png" alt="Deposit form"></p>
+<p>At the moment the field accepts any kind of text as input, although we strongly suggest that you use <a href="https://semver.org/">semantic versioning</a> for machine-readability.</p>
+<p>The version field is directly integrated within our search results and record pages.</p>
+<p><img src="../../2017/11/02/version-field/version-records-search.png" alt="Record page">
+<img src="../../2017/11/02/version-field/version-records-ui.png" alt="Record page"></p>
+<h4>What about GitHub releases?</h4>
+<p>This change extends to our GitHub integration, which from now on will automatically populate the version field using the git tag of your GitHub release.
+You don't have to worry about all GitHub releases that have been already published on Zenodo - they have all been updated with their corresponding release tags.</p>
+<h4>Does this affect the order of the record versions?</h4>
+<p>No, the order of the record's versions remains as before, i.e.: record versions are ordered chronologically by the record creation time.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
+<a href="../../2017/10/10/grants-and-language-update/"><h1>Extended grant support, ORCID and language field.</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
+    
+    
+    
+    Krzysztof Nowak,
+  
+  on October 10, 2017
+</p>
+<hr />
+<div class="body"><p>Today, we are introducing three additions to Zenodo:</p>
+<ol>
+<li>Extended grant support</li>
+<li>Language field</li>
+<li>ORCID for authors</li>
+</ol>
+<h2>Extended grant support (powered by OpenAIRE)</h2>
+<p>We are expanding our grants database with over 620,000 grants from 8 new funders such as the National Science Foundation (US) and Wellcome Trust (UK) - all thanks to <a href="https://openaire.eu/">OpenAIRE</a>'s ever growing grants database.</p>
+<p><img src="../../2017/10/10/grants-and-language-update/grants.png" alt="Zenodo OpenAIRE grants database"></p>
+<p>So far we have only been supporting grants from the European Commission (FP7 and Horizon 2020). Today our dataset has grown and contains grants from the following funders:</p>
+<ul>
+<li>National Science Foundation (USA) - 497646 grants</li>
+<li>European Commission (EU) - 39409 grants</li>
+<li>Foundation for Science and Technology (Portugal) - 37277 grants</li>
+<li>National Health and Medical Research Council (Australia) - 24354 grants</li>
+<li>Netherlands Organisation for Scientific Research (The Netherlands) - 24180 grants</li>
+<li>Australian Research Council (Australia) - 23011 grants</li>
+<li>Wellcome Trust (United Kingdom) - 12196 grants</li>
+<li>Ministry of Science and Education (Croatia) - 2120 grants</li>
+<li>Ministry of Education, Science and Technological Development (Serbia) - 777 grants</li>
+</ul>
+<p>which means that our grants database grew from nearly <strong>40,000</strong> to over <strong>660,000</strong> grants! We wouldn't have been able to do that if it wasn't for the OpenAIRE team and their hard work in collecting, maintaining and distributing the grants database for the benefit of Open Science!</p>
+<h2>Language field</h2>
+<p>Today we are also adding a new language field to our metadata, which allows you to record the primary language of an upload. You can select the language in the upload form simply by starting to type the English name, a 2-letter or a 3-letter ISO 639 code:</p>
+<p><img src="../../2017/10/10/grants-and-language-update/language.png" alt="Language for Zenodo"></p>
+<p>The new language field supports all languages defined in ISO 639-3, which in total defines 436 individual and macro-languages. For the full reference of language codes see the <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">Library of Congress ISO 639 Language List</a>.</p>
+<h4>What if my record contains more than one language?</h4>
+<p>The field is used to specify the primary language of the resource, hence if, e.g., a thesis is written in Danish and has an English abstract, then the primary language is Danish. Similarly, the primary language of a paper written in English, which is on the topic of Greek linguistics, thus containing a lot of text in Greek, is English.</p>
+<p>There are always cases where it is not possible to clearly determine the primary language, for example for a dataset containing the mapping between common Polish and French phrases. In those special cases you can always use ISO 639-3 code <a href="https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?code_ID=306"><code>mul</code> (Multiple Languages)</a>.</p>
+<h2>ORCID for authors</h2>
+<p>Last but not least, you can now include an author's ORCID under the <em>Authors</em> section of the metadata on the deposit web interface.
+<img src="../../2017/10/10/grants-and-language-update/orcid.png" alt="Zenodo author ORCID"></p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
+<a href="../../2017/07/31/gsoc-and-zenodo-update/"><h1>Google Summer of Code and Zenodo summer update</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
+    
+    
+    
+    Krzysztof Nowak,
+  
+  on July 31, 2017
+</p>
+<hr />
+<div class="body"><h2>Google Summer of Code 2017</h2>
+<p>Zenodo has been taking part in Google Summer of Code 2017 and since June two
+students, Aman Jain and Xiao Meng, have been working with our team on
+introducing two exciting features to Zenodo by the end of the summer.</p>
+<p>Aman Jain's project will introduce public user profiles on Zenodo that will
+allow our users to share and show case their uploads on Zenodo.</p>
+<p>Xiao Meng's project introduces a new backend files processing module, which will
+enable us to e.g. extract the metadata from the PDF documents and use that
+information to improve search or easy pre-filling of upload forms.</p>
+<h2>New feature: support contact form</h2>
+<p>Thanks to Aman Jain, one of our GSoC students, you can now contact us more
+efficiently through a contact form available at
+<a href="https://zenodo.org/support">zenodo.org/support</a>. This will allow us to
+organize and resolve our support requests better and faster.</p>
+<h2>New feature: logged in devices</h2>
+<p>We recently updated Zenodo to the latest Invenio version which brought along a
+new feature that allow users to view all devices currently logged into their
+account. This security feature allow you to remotely log out of devices in case
+you e.g. forgot to logout of your Zenodo account on a public computer.</p>
+<p>You can view all currently logged-in devices by navigating to the
+<a href="https://zenodo.org/account/settings/security/">Security</a> tab in your account
+settings.</p>
+<p><img src="../../2017/07/31/gsoc-and-zenodo-update/active_sessions.png" alt="Active sessions"></p>
+<h2>New feature: status page</h2>
+<p>On the footer of all Zenodo pages you will now find a "Status" hyperlink
+(<a href="https://stats.uptimerobot.com/vlYOVuWgM/">Uptime Robot</a>), which will show you status
+of Zenodo and uptime statistics for Zenodo pages and services.</p>
+</div>
+  
+  <br />
+  <br />
+
+
+  
+<div class="pagination">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        
+          <b><a href="../10/">Older</a></b>
+        
+      </div>
+      <div class="col-md-4 text-center">
+
+        <b><a href="/all">All</a></b>
+      </div>
+      <div class="col-md-4 text-center">
+        
+          <b><a href="../8/">Newer</a></b>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <footer class="footer">
+    <div class="menu-wrapper">
+      <div class="container">
+        <div class="row footer-menu">
+          <div class="col-xs-12 col-md-8">
+            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <h5>About</h5>
+                <ul class="list-unstyled">
+                  <li><a href="http://about.zenodo.org">About</a></li>
+                  <li><a href="http://about.zenodo.org/policies/">Policies</a></li>
+                  <li><a href="http://about.zenodo.org/infrastructure/">Infrastructure</a></li>
+                  <li><a href="http://about.zenodo.org/principles/">Principles</a></li>
+                  <li><a href="http://about.zenodo.org/roadmap/">Roadmap</a></li>
+                  <li><a href="http://about.zenodo.org/projects/">Projects</a></li>
+                  <li><a href="http://about.zenodo.org/contact/">Contract</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Blog</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://blog.zenodo.org">Blog</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Help</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://help.zenodo.org">Overview</a></li>
+                  <li><a href="https://help.zenodo.org/faq/">FAQ</a></li>
+                  <li><a href="https://help.zenodo.org/guides/">Guides</a></li>
+                  <li><a href="https://zenodo.org/support">Support</a></li>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Developers</h5>
+                <ul class="list-unstyled">
+                <li><a href="https://developers.zenodo.org">REST API</a></li>
+                <li><a href="https://developers.zenodo.org#oai-pmh">OAI-PMH</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Contribute</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://github.com/zenodo/zenodo"><i class="fa fa-external-link"></i> GitHub</a></li>
+                  <li><a href="https://zenodo.org/donate"><i class="fa fa-external-link"></i> Donate</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <div class="pull-right-md text-center-sm text-center-xs">
+              <h5>Funded by</h5>
+              <ul class="list-inline">
+                <li><a href="https://home.cern"><img src="/static/img/cern.png" width="60" height="60" /></a></li>
+                <li><a href="https://www.openaire.eu"><img src="/static/img/openaire.png" width="80"/></a></li>
+                <li><a href="https://ec.europa.eu/programmes/horizon2020/"><img src="/static/img/eu.png" width="88" height="60" /></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-push-6">
+          <div class="pull-right-sm text-center-xs">
+            <ul class="list-inline">
+              <li><a href="https://stats.uptimerobot.com/vlYOVuWgM">Status</a></li>
+              <li><a href="https://about.zenodo.org/privacy-policy">Privacy policy</a></li>
+              <li><a href="https://about.zenodo.org/terms">Terms of Use</a></li>
+              <li><a href="https://about.zenodo.org/contact">Support</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-sm-pull-6 text-center-xs">
+          <p><a title="Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International License." rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" height="20" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>&nbsp; Powered by <a href="https://home.cern/science/computing/data-centre">CERN Data Centre</a> &amp; <a href="http://inveniosoftware.org">Invenio</a>.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>

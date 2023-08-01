@@ -1,0 +1,185 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<meta property="og:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
+
+
+<meta property="og:title" content="Major database incident" />
+
+
+<meta property="og:type" content="article" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@zenodo_org" />
+<meta name="twitter:creator" content="@zenodo_org" />
+
+<meta property="og:title" content="Major database incident" />
+
+
+
+<meta name="twitter:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
+
+<meta name="twitter:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
+<link rel="stylesheet" href="../../../../static/zenodo.css">
+<link rel="stylesheet" href="../../../../static/style.css">
+<link rel="stylesheet" href="../../../../static/font-awesome/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
+<title>Zenodo</title>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<body>
+  <header>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://zenodo.org"><img class="navbar-brand" src="/static/img/zenodo.svg" alt="Zenodo" /></a>
+          <span class="logo-divider"></span>
+          <span class="header-title" aria-label="header-title">Blog</span>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right toplist">
+            
+              <li><a href="https://about.zenodo.org">About</a></li>
+            
+              <li><a href="https://blog.zenodo.org">Blog</a></li>
+            
+              <li><a href="https://help.zenodo.org">Help</a></li>
+            
+              <li><a href="https://about.zenodo.org/projects">Projects</a></li>
+            
+              <li><a href="https://developers.zenodo.org">Developers</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="communities">
+    
+    
+    <div class="container body-container">
+      <div class="row">
+        <div class="col-md-12">
+          
+  
+    
+<h1>Major database incident</h1>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../../../static/img/authors/lnielsen.jpg" />
+    
+    
+    
+    Lars Holm Nielsen,
+  
+  on August 21, 2018
+</p>
+<hr />
+<div class="body"><h4>What happened?</h4>
+<p>On Friday August 17 at 11:45 UTC the Zenodo database crashed because of a full volume on the database server. During auto-restart the database crashed again corrupting tables, which proved to be extremely difficult to recover from. It took three senior engineers, working round the clock, close to 2 days and 12 hours to bring Zenodo back online eventually on Sunday August 19 at 23:30 UTC.</p>
+<h4>How did it happen?</h4>
+<p>The root cause was an import of 2 million new grants to our grants database. This generated a very high insertion rate to our database. The database server has built-in protective mechanisms that automatically extend the disk volumes in case they approach being full. Exceptionally, due to the high insertion rate, the mechanisms did not fire fast enough. The full disk caused the database to crash after which it automatically restarted and tried to recover. Exceptionally, during the recovery phase, the database crashed again causing corruption to parts of the database.</p>
+<h4>Is it fixed?</h4>
+<p>Through hours of manual reconstruction work we have recovered the entire database until 20 minutes before the crash. We are still working on recovering the remaining 20 minutes from other sources. We have good hope to have finished recovery of the full database by the end of the week.</p>
+<h4>Is my record affected?</h4>
+<p>Only a handful of records submitted in the 20 minutes before the crash are affected. We have temporarily disabled these records until we have managed to thoroughly verify their integrity. If your record has been disabled, you’ll see a page similar to this one <a href="https://zenodo.org/record/1346821">https://zenodo.org/record/1346821</a>.</p>
+<h4>Why so long downtime?</h4>
+<p>Our prime concern is to avoid data loss, so we chose the harder, longer path to recover in order to minimise data loss rather than maximise uptime. We currently backup our entire database every 12 hours to disk and every week to tape. The latest backup prior to the incident was at 05:00 UTC. Thus using this backup would have meant more than 6 hours of data loss from the database. To avoid data loss, we therefore decided instead to repair the corrupted parts of the database, thus causing significantly longer downtime than if we had restored a backup. The repairing was possible because we could re-validate the database against our search index and web server access logs.</p>
+<h4>Were my files at risk?</h4>
+<p>No, the files (the payload of every record) are stored outside the database which only stores the metadata of the records. These files are stored in multiple copies on multiples servers before a new record is completed in the database. However accessing and serving the files requires the database record that points to them. In addition, we write submission information packages (SIPs) to disk which contain both the metadata and uploaded files, however these SIPs are not written to disk immediately, and thus don’t help recover data close to a crash.</p>
+<h4>What did we learn?</h4>
+<p>It is said that every challenge faced makes us stronger! Even though we have numerous protection and self-healing mechanisms at each level of the stack they were not enough, and did not protect against combinatorial failures. We are thus taking this incident very seriously and thoroughly investigating what happened and what can be improved to avoid even more failure modes and to make recovery quicker. One track we are looking at is replica configurations that would isolate crash corruptions to one node.</p>
+</div>
+  
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <footer class="footer">
+    <div class="menu-wrapper">
+      <div class="container">
+        <div class="row footer-menu">
+          <div class="col-xs-12 col-md-8">
+            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <h5>About</h5>
+                <ul class="list-unstyled">
+                  <li><a href="http://about.zenodo.org">About</a></li>
+                  <li><a href="http://about.zenodo.org/policies/">Policies</a></li>
+                  <li><a href="http://about.zenodo.org/infrastructure/">Infrastructure</a></li>
+                  <li><a href="http://about.zenodo.org/principles/">Principles</a></li>
+                  <li><a href="http://about.zenodo.org/roadmap/">Roadmap</a></li>
+                  <li><a href="http://about.zenodo.org/projects/">Projects</a></li>
+                  <li><a href="http://about.zenodo.org/contact/">Contract</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Blog</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://blog.zenodo.org">Blog</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Help</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://help.zenodo.org">Overview</a></li>
+                  <li><a href="https://help.zenodo.org/faq/">FAQ</a></li>
+                  <li><a href="https://help.zenodo.org/guides/">Guides</a></li>
+                  <li><a href="https://zenodo.org/support">Support</a></li>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Developers</h5>
+                <ul class="list-unstyled">
+                <li><a href="https://developers.zenodo.org">REST API</a></li>
+                <li><a href="https://developers.zenodo.org#oai-pmh">OAI-PMH</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <h5>Contribute</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://github.com/zenodo/zenodo"><i class="fa fa-external-link"></i> GitHub</a></li>
+                  <li><a href="https://zenodo.org/donate"><i class="fa fa-external-link"></i> Donate</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <div class="pull-right-md text-center-sm text-center-xs">
+              <h5>Funded by</h5>
+              <ul class="list-inline">
+                <li><a href="https://home.cern"><img src="/static/img/cern.png" width="60" height="60" /></a></li>
+                <li><a href="https://www.openaire.eu"><img src="/static/img/openaire.png" width="80"/></a></li>
+                <li><a href="https://ec.europa.eu/programmes/horizon2020/"><img src="/static/img/eu.png" width="88" height="60" /></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-push-6">
+          <div class="pull-right-sm text-center-xs">
+            <ul class="list-inline">
+              <li><a href="https://stats.uptimerobot.com/vlYOVuWgM">Status</a></li>
+              <li><a href="https://about.zenodo.org/privacy-policy">Privacy policy</a></li>
+              <li><a href="https://about.zenodo.org/terms">Terms of Use</a></li>
+              <li><a href="https://about.zenodo.org/contact">Support</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-sm-pull-6 text-center-xs">
+          <p><a title="Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International License." rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" height="20" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>&nbsp; Powered by <a href="https://home.cern/science/computing/data-centre">CERN Data Centre</a> &amp; <a href="http://inveniosoftware.org">Invenio</a>.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
