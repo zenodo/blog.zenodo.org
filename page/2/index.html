@@ -67,6 +67,92 @@
 
   
     
+<a href="../../2022/12/07/2022-12-07-zenodo-on-inveniordm/"><h1>Zenodo’s next generation platform - InvenioRDM</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+    
+    
+    
+    Lars Holm Nielsen,
+  
+  on December 7, 2022
+</p>
+<hr />
+<div class="body"><p>We're excited to share our plans for Zenodo in the coming 6-12 months.</p>
+<p><strong>TL;DR</strong> - See our <a href="https://zenodo-rdm.web.cern.ch">demo site</a> for Zenodo's next-generation platform based on InvenioRDM.</p>
+<h2>Next-generation platform</h2>
+<p>We are currently in the process of moving Zenodo on top of our next-generation platform based on <a href="https://inveniordm.docs.cern.ch">InvenioRDM</a>. InvenioRDM is a digital repository platform born out of Zenodo and developed together with <a href="https://inveniosoftware.org/products/rdm/">25 other partners</a>.</p>
+<p>For institutions/domains, InvenioRDM enables them to provide the "Zenodo-experience" in their own repositories. For Zenodo, InvenioRDM enables us to collaborate with partners on the technical platform underpinning Zenodo.</p>
+<p>InvenioRDM is already being used in production system today, see for instance:</p>
+<ul>
+<li><a href="https://data.caltech.edu">https://data.caltech.edu</a></li>
+<li><a href="https://repository.tugraz.at">https://repository.tugraz.at</a></li>
+</ul>
+<h2>The ZenodoRDM project</h2>
+<p>The move to InvenioRDM is being managed and coordinated through our ZenodoRDM project. The focus of the project is to migrate Zenodo.org with the existing feature set to InvenioRDM and provide backward compatibility to our users.</p>
+<p>The largest challenge in the project is by far the full data migration process. Zenodo today has almost 3 million records, 300k users and many API integrations, and thus we're doing our outmost to minimize disruptions during the data migration process and ensure existing API integrations will continue to work unaffected.</p>
+<p><strong>Milestones</strong></p>
+<p>Our project is designed to start early on with the data migration, and continue it as a main activity throughout the entire project.  Thus, a large fraction of each milestone is dedicated to data migration.</p>
+<p>In addition for each milestone, we'll work with specific users to validate that everything works as supposed.</p>
+<p>The milestones for the project</p>
+<ul>
+<li>MS2 Themed demo-site with initial data migration</li>
+<li>MS3 Legacy API support</li>
+<li>MS4 Basic feature set completion </li>
+<li>MS5 Normal feature set completion </li>
+<li>MS6 Advanced feature set completion </li>
+<li>MS7 Support operations</li>
+<li>MS8 Launch</li>
+</ul>
+<p><strong>Timeline</strong></p>
+<p>We are expecting to go-live with the new platform in Autumn 2023.</p>
+<h2>What's new</h2>
+<p>The move to InvenioRDM will also provide some long awaited new features for Zenodo. See below what's coming, or even better, check out the new features for yourself on our <a href="https://zenodo-rdm.web.cern.ch">demo site</a>.</p>
+<h3>State of demo site</h3>
+<p>We have loaded a partial dump of 1M records and a couple of communities from Zenodo into the demo site. The records are not connected with user accounts and thus cannot be edited. You can create new communities and test the new upload form and get a feeling for some of the changes we've made.</p>
+<h3>Community members</h3>
+<p>InvenioRDM supports having members with different roles - that means multiple users can curate records and/or see closed access content in the communtiy. Zenodo will come with the following community roles:</p>
+<ul>
+<li><strong>Reader</strong>: A reader is a member of the community and can view restricted files owned by the community.</li>
+<li><strong>Curator</strong>: A curator can in addition to a reader also edit/accept/decline records in a community.</li>
+<li><strong>Manager</strong>: A manager can in addition to curators also manage members of a community.</li>
+<li><strong>Owner</strong>: An owner has full administrative access to a community, and can change all settings as well as delete the community.</li>
+</ul>
+<p><a href="https://inveniordm.docs.cern.ch/releases/versions/version-v9.0.0/#communities">More about communities</a></p>
+<h3>Reviews</h3>
+<p>Submission to communities now enable the curator and uploader to have a conversation directly on the platform. Curators of the community will receive the review request, and can have a conversation with the submitter, as well as preview the submitted record. Both the submitter and curator can edit and update the record under review until it's published:</p>
+<p><a href="https://inveniordm.docs.cern.ch/releases/versions/version-v9.0.0/#reviews">More about review</a></p>
+<h3>Upload form</h3>
+<p>Our upload form have also gotten a larger overhaul. You'll for instance find the following changes:</p>
+<ul>
+<li><a href="https://inveniordm.docs.cern.ch/releases/versions/version-v8.0.0/#creatorscontributors-auto-completion">Creator auto-completion</a> from ORCID</li>
+<li><a href="https://inveniordm.docs.cern.ch/releases/versions/version-v5.0.0/#affiliations-and-ror-support">Affiliations auto-completion</a> from ROR.</li>
+<li><a href="https://inveniordm.docs.cern.ch/releases/versions/version-v6.0.0/#subjects-oecd-fields-of-science">Subjects auto-completion</a> from e.g. OECD Fields of Science and Technology vocbulary.</li>
+<li>New improved license selection and <a href="https://inveniordm.docs.cern.ch/releases/versions/version-v9.0.0/#funders-and-awards">funder/award integration</a>. </li>
+</ul>
+<h2>FAQ</h2>
+<h4>Will your APIs be backward compatibile?</h4>
+<p>Yes, we do our outmost to ensure backward compatibility of our APIs, and your integration will continue to work on the new platform as well.</p>
+<h4>Will I be required to update my API integration ?</h4>
+<p>After Zenodo on InvenioRDM has been launched (Autumn 2023), we will deprecate some of our existing APIs. We will provide a migration period of 1-year for the transition. New features, will only be available on the new API.</p>
+<h4>Where do I find documentation of your new REST API?</h4>
+<p>You can find the documentation for our new REST API in the <a href="https://inveniordm.docs.cern.ch/reference/rest_api_index/">InvenioRDM documentation</a>.</p>
+<h4>Will the community curators be able to edit my existing records?</h4>
+<p>No. You will have to opt-in to allow community curators to edit the metadata of records already uploaded on Zenodo. Metadata of new recods you upload after the launch will by default be editable by curators (and you'll be asked to confirm).</p>
+<h4>Will feature X still work?</h4>
+<p>Yes, we will provide backward compatiblity for all existing features.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2022/09/30/2022-09-30-northwestern-cern-join-nih-in-enhancing-access-to-biomedical-research/"><h1>Northwestern, CERN Join NIH in Enhancing Access to Biomedical Research</h1></a>
 
 <p class="meta">
@@ -123,127 +209,6 @@
 <p>All in all, if you're an existing Zenodo user and didn't login via ORCiD or GitHub, or had any of your uploads accepted in a community, your records will appear at the bottom of search results. We will be working on safelisting all existing users as fast as possible.</p>
 <p>If you're a new Zenodo user, your uploads will also appear at the bottom of search results until our manual review has safelisted you. We plan safelisting new users at least once a day during business days, but until we have worked through the backlog of existing users there might be a longer delay.</p>
 <p>The new feature in no way limits you ability to share and preserve research results. You can still upload your data, software and publications to Zenodo, and get a DOI instantly. The new measures only make sure that spam that makes it past our automated classification system is much less visible in search results, until a human review can catch the spammer.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/"><h1>Zenodo Enables a New Workflow for Collectors of Natural History Specimens</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    
-    
-    <a href="https://orcid.org/0000-0001-7618-5230"> 
-      <img class="img-rounded" width=18 height=18 src="/static/img/orcid.png" />
-    </a>
-    
-    David P. Shorthouse,
-  
-    
-    
-    
-    
-    <a href="https://orcid.org/0000-0003-2926-1645"> 
-      <img class="img-rounded" width=18 height=18 src="/static/img/orcid.png" />
-    </a>
-    
-    Dr. Zoë Goodwin,
-  
-    
-    
-    
-    
-    <a href="https://orcid.org/0000-0002-4098-5823"> 
-      <img class="img-rounded" width=18 height=18 src="/static/img/orcid.png" />
-    </a>
-    
-    K. Samanta Orellana,
-  
-  on June 27, 2022
-</p>
-<hr />
-<div class="body"><p><a href="https://doi.org/10.5281/zenodo.6761723"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6761723.svg" alt="DOI"></a></p>
-<p><a href="https://bionomia.net">Bionomia</a>, launched August 2018 with the aim of linking natural history specimen records to people who collected them and/or identified them to species. The two main goals are to:</p>
-<p>(1) give credit to and improve the visibility of people who have contributed to the world’s natural history collections (see Thessen <em>et al.</em>, 2019; McDade <em>et al.</em>, 2011); and,</p>
-<p>(2) encourage natural history collections data managers to incorporate these new digital annotations into their source data warehouses, which completes a round-trip of high-quality, curated annotations.</p>
-<p>Zenodo is a key piece of infrastructure to help realize the first goal, especially for graduate students and early career researchers who desire a breadth of ways to illustrate their expertise and impact.</p>
-<p>Bionomia uses data that is produced by the world’s natural history collections and subsequently shared with the Global Biodiversity Information Facility (<a href="https://gbif.org">GBIF</a>). Linking specimen records to people in this data is however challenging because people names are typically expressed as free-text with considerable variability in the ordering of the parts of names, abbreviations, and according to local cultural practices in the used data exchange standard maintained by Biodiversity Information Standards (<a href="https://www.tdwg.org/">TDWG</a>). Through Bionomia, authenticated users actively disambiguate these text-based “agent strings” as they are commonly called, into Uniform Resource Identifiers (URIs) from Wikidata or ORCID as declarations of unequivocal person identity. Thus, free-text strings for people are enhanced to become uniquely identifiable and are thus better participants in the exchange of data according to the FAIR principles (Wilkinson <em>et al.</em>, 2016).</p>
-<p>When a user first logs in to Bionomia via OAuth using their ORCID credentials, they are presented with an interface to claim the records of natural history specimens they collected or identified. Over 175M records are downloaded and refreshed from GBIF into Bionomia every few weeks, then processed and pre-indexed for a pleasing experience, which would ordinarily have been a daunting task for any user. The reason for this refresh cycle is to keep pace with the continuous activities that occur upstream in the world’s museums and collections in which researchers deposit their physical specimens. Each user has a “Settings &amp; Integrations” section in their account in Bionomia where they have the option to archive their data to Zenodo. Behind the scenes, Bionomia makes use of Zenodo’s well-documented <a href="https://developers.zenodo.org/">REST API</a> for users to authenticate using OAuth – most often using their ORCID credentials once again – and then auto-deposits versioned archives of users’ claimed specimen records as both csv and JSON-LD files. The mechanics of this interaction is made seamless for users (Figures 1–4); they complete the process with a few clicks and no typing or form submission is required of them. Within moments, they have a new freely accessible (Creative Commons Zero v1.0 Universal) entry in Zenodo as a resource type “dataset” along with their ORCID ID clearly indicated, a handful of keywords, a formatted description, a title, a referenceable citation (Figures 5 &amp; 6), and a DataCite DOI. Whenever specimen records are newly attributed to or claimed by users who have enabled this integration between Bionomia and Zenodo, their datasets are automatically constructed anew, pushed to Zenodo, and new versions appear (Figure 7). If a user additionally configures their ORCID profile to accept DataCite as a trusted party, their new dataset entry appears in ORCID soon afterward alongside their publications and affiliations (Figure 8).</p>
-<p>To date, 84 users of Bionomia have integrated their account with Zenodo and are collectively archiving 552,659 specimen records. While this may seem like a small number of active integrations, this is a valuable service for each of them. Many researchers were newly introduced to this novel workflow – archiving specimen-based data is an uncommon practice in our domain – and are now appreciative of Zenodo’s mission, user-friendly design, flexibility, and openness. Why not join this growing open science movement, by <a href="https://bionomia.net/get-started">claiming</a> your specimen data?</p>
-<h3>Testimonial by Dr. Zoë Goodwin</h3>
-<p>As a tropical botanist, a lot of my effort goes into the fundamental aspects of natural history data: the collection, identification and naming of plant specimens. Without these actions we can have no understanding of the natural world around us. However, until now it has been virtually impossible to keep track of these actions, claim them as work and then see how my particular efforts have contributed to other scientists’ research. By using Bionomia to claim the specimens that I have collected and identified in GBIF, for the first-time others can see what I have done and see how I have contributed to our understanding of the natural world. Then, importantly as an early career researcher I can include all this information as a citation &amp; DOI using Zenodo in my CV or on my personal webpage.</p>
-<p>Goodwin, Zoë. 2022. Natural history specimens collected and/or identified and deposited. [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.3581428">https://doi.org/10.5281/zenodo.3581428</a></p>
-<h3>Testimonial by K. Samanta Orellana</h3>
-<p>When I started studying insects in Central America, I had the opportunity to collect, process, and identify thousands of specimens in different entomological collections. However, I didn’t have the means or even know how to digitize and mobilize collection data and many of these activities went unnoticed. It wasn’t until I started my research as a PhD student in the US, that I was able to learn about the digitization workflows and the importance of sharing data in global aggregators such as GBIF. At the same time, I was able to learn about Bionomia and I was instantly engaged. Being able to see the details about my work in collections, and see how the specimens are connected to other collectors or taxonomists, became a strong motivation to continue digitizing and sharing data. Moreover, the ability to compile this information via Zenodo and make it citable has been a great way to make my contributions visible through my ORCID researcher profile, also allowing me to keep records of the progress made during my doctoral program.</p>
-<p>Orellana, K. Samanta. 2022. Natural history specimens collected and/or identified and deposited. [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.3942155">https://doi.org/10.5281/zenodo.3942155</a></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable.png">
-  <figcaption align="center"><small><em>Figure 1. Before a user claims the records for natural history specimens they collected or identified, they are presented with the above notice in their “Settings & Integrations” panel.
-</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable-integrate-zenodo.png">
-  <figcaption align="center"><small><em>Figure 2. After claiming at least one specimen record in Bionomia, the Zenodo panel in a Bionomia user’s Settings & Integrations changes to inform them that they may begin the auto-archival process. Clicking the “Integrate with Zenodo” button presents a user with Zenodo’s authentication screen where permissions may be granted to Bionomia to auto-create a dataset and link it to their account.
-</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable-linked-account.png">
-  <figcaption align="center"><small><em>Figure 3. Once a user has enabled the integration between Bionomia and Zenodo, their request is queued for processing and then pushed to Zenodo. The process typically takes a few minutes.
-</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable-DOI.png">
-  <figcaption align="center"><small><em>Figure 4. Once an archive has been created in Zenodo and a response has been received by its API, the assigned DOI is presented in a Bionomia user’s panel. The user may disconnect the integration with Zenodo whenever they wish.
-</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/cite-as.png">
-  <figcaption align="center"><small><em>Figure 5. A well-formatted citation of a natural history specimen data package for users to include in their curriculum vita.
-</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/presentation.png">
-  <figcaption align="center"><small><em>Figure 6. The presentation of a natural history specimen data package on Zenodo, auto-produced through integration with Bionomia.</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/versions.png">
-  <figcaption align="center"><small><em>Figure 7. The versions of natural history specimen data that auto-accrue in Zenodo for users of Bionomia that have enabled the integration.</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/orcid.png">
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/natural-history.png">
-  <figcaption align="center"><small><em>Figure 8. The presentation of a work entry in ORCID for a user of Bionomia who has integrated their account with Zenodo and who has additionally made DataCite a trusted party.</em></small></figcaption>
-</figure>
-<br></p>
-<h3>References</h3>
-<p>McDade, L.A., D.R. Maddison, R. Guralnick, H.A. Piwowar, M.L. Jameson, K.M. Helgen, P.S. Herendeen, A. Hill, and M.L. Vis. 2011. Biology needs a modern assessment system for professional productivity. BioScience 61(8): 619–625. <a href="https://doi.org/10.1525/bio.2011.61.8.8">https://doi.org/10.1525/bio.2011.61.8.8</a></p>
-<p>Thessen, A.E., M. Woodburn, D. Koureas, D. Paul, M. Conlon, D.P. Shorthouse and S. Ramdeen. 2019. Proper attribution for curation and maintenance of research collections: Metadata recommendations of the RDA/TDWG Working Group. Data Science Journal 18(1): 54. <a href="http://doi.org/10.5334/dsj-2019-054">http://doi.org/10.5334/dsj-2019-054</a></p>
-<p>Wilkinson, M., M. Dumontier, I. Aalbersberg et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3: 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a></p>
 </div>
   
   <br />

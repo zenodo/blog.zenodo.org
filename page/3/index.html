@@ -67,6 +67,127 @@
 
   
     
+<a href="../../2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/"><h1>Zenodo Enables a New Workflow for Collectors of Natural History Specimens</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    
+    
+    <a href="https://orcid.org/0000-0001-7618-5230"> 
+      <img class="img-rounded" width=18 height=18 src="/static/img/orcid.png" />
+    </a>
+    
+    David P. Shorthouse,
+  
+    
+    
+    
+    
+    <a href="https://orcid.org/0000-0003-2926-1645"> 
+      <img class="img-rounded" width=18 height=18 src="/static/img/orcid.png" />
+    </a>
+    
+    Dr. Zoë Goodwin,
+  
+    
+    
+    
+    
+    <a href="https://orcid.org/0000-0002-4098-5823"> 
+      <img class="img-rounded" width=18 height=18 src="/static/img/orcid.png" />
+    </a>
+    
+    K. Samanta Orellana,
+  
+  on June 27, 2022
+</p>
+<hr />
+<div class="body"><p><a href="https://doi.org/10.5281/zenodo.6761723"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6761723.svg" alt="DOI"></a></p>
+<p><a href="https://bionomia.net">Bionomia</a>, launched August 2018 with the aim of linking natural history specimen records to people who collected them and/or identified them to species. The two main goals are to:</p>
+<p>(1) give credit to and improve the visibility of people who have contributed to the world’s natural history collections (see Thessen <em>et al.</em>, 2019; McDade <em>et al.</em>, 2011); and,</p>
+<p>(2) encourage natural history collections data managers to incorporate these new digital annotations into their source data warehouses, which completes a round-trip of high-quality, curated annotations.</p>
+<p>Zenodo is a key piece of infrastructure to help realize the first goal, especially for graduate students and early career researchers who desire a breadth of ways to illustrate their expertise and impact.</p>
+<p>Bionomia uses data that is produced by the world’s natural history collections and subsequently shared with the Global Biodiversity Information Facility (<a href="https://gbif.org">GBIF</a>). Linking specimen records to people in this data is however challenging because people names are typically expressed as free-text with considerable variability in the ordering of the parts of names, abbreviations, and according to local cultural practices in the used data exchange standard maintained by Biodiversity Information Standards (<a href="https://www.tdwg.org/">TDWG</a>). Through Bionomia, authenticated users actively disambiguate these text-based “agent strings” as they are commonly called, into Uniform Resource Identifiers (URIs) from Wikidata or ORCID as declarations of unequivocal person identity. Thus, free-text strings for people are enhanced to become uniquely identifiable and are thus better participants in the exchange of data according to the FAIR principles (Wilkinson <em>et al.</em>, 2016).</p>
+<p>When a user first logs in to Bionomia via OAuth using their ORCID credentials, they are presented with an interface to claim the records of natural history specimens they collected or identified. Over 175M records are downloaded and refreshed from GBIF into Bionomia every few weeks, then processed and pre-indexed for a pleasing experience, which would ordinarily have been a daunting task for any user. The reason for this refresh cycle is to keep pace with the continuous activities that occur upstream in the world’s museums and collections in which researchers deposit their physical specimens. Each user has a “Settings &amp; Integrations” section in their account in Bionomia where they have the option to archive their data to Zenodo. Behind the scenes, Bionomia makes use of Zenodo’s well-documented <a href="https://developers.zenodo.org/">REST API</a> for users to authenticate using OAuth – most often using their ORCID credentials once again – and then auto-deposits versioned archives of users’ claimed specimen records as both csv and JSON-LD files. The mechanics of this interaction is made seamless for users (Figures 1–4); they complete the process with a few clicks and no typing or form submission is required of them. Within moments, they have a new freely accessible (Creative Commons Zero v1.0 Universal) entry in Zenodo as a resource type “dataset” along with their ORCID ID clearly indicated, a handful of keywords, a formatted description, a title, a referenceable citation (Figures 5 &amp; 6), and a DataCite DOI. Whenever specimen records are newly attributed to or claimed by users who have enabled this integration between Bionomia and Zenodo, their datasets are automatically constructed anew, pushed to Zenodo, and new versions appear (Figure 7). If a user additionally configures their ORCID profile to accept DataCite as a trusted party, their new dataset entry appears in ORCID soon afterward alongside their publications and affiliations (Figure 8).</p>
+<p>To date, 84 users of Bionomia have integrated their account with Zenodo and are collectively archiving 552,659 specimen records. While this may seem like a small number of active integrations, this is a valuable service for each of them. Many researchers were newly introduced to this novel workflow – archiving specimen-based data is an uncommon practice in our domain – and are now appreciative of Zenodo’s mission, user-friendly design, flexibility, and openness. Why not join this growing open science movement, by <a href="https://bionomia.net/get-started">claiming</a> your specimen data?</p>
+<h3>Testimonial by Dr. Zoë Goodwin</h3>
+<p>As a tropical botanist, a lot of my effort goes into the fundamental aspects of natural history data: the collection, identification and naming of plant specimens. Without these actions we can have no understanding of the natural world around us. However, until now it has been virtually impossible to keep track of these actions, claim them as work and then see how my particular efforts have contributed to other scientists’ research. By using Bionomia to claim the specimens that I have collected and identified in GBIF, for the first-time others can see what I have done and see how I have contributed to our understanding of the natural world. Then, importantly as an early career researcher I can include all this information as a citation &amp; DOI using Zenodo in my CV or on my personal webpage.</p>
+<p>Goodwin, Zoë. 2022. Natural history specimens collected and/or identified and deposited. [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.3581428">https://doi.org/10.5281/zenodo.3581428</a></p>
+<h3>Testimonial by K. Samanta Orellana</h3>
+<p>When I started studying insects in Central America, I had the opportunity to collect, process, and identify thousands of specimens in different entomological collections. However, I didn’t have the means or even know how to digitize and mobilize collection data and many of these activities went unnoticed. It wasn’t until I started my research as a PhD student in the US, that I was able to learn about the digitization workflows and the importance of sharing data in global aggregators such as GBIF. At the same time, I was able to learn about Bionomia and I was instantly engaged. Being able to see the details about my work in collections, and see how the specimens are connected to other collectors or taxonomists, became a strong motivation to continue digitizing and sharing data. Moreover, the ability to compile this information via Zenodo and make it citable has been a great way to make my contributions visible through my ORCID researcher profile, also allowing me to keep records of the progress made during my doctoral program.</p>
+<p>Orellana, K. Samanta. 2022. Natural history specimens collected and/or identified and deposited. [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.3942155">https://doi.org/10.5281/zenodo.3942155</a></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable.png">
+  <figcaption align="center"><small><em>Figure 1. Before a user claims the records for natural history specimens they collected or identified, they are presented with the above notice in their “Settings & Integrations” panel.
+</em></small></figcaption>
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable-integrate-zenodo.png">
+  <figcaption align="center"><small><em>Figure 2. After claiming at least one specimen record in Bionomia, the Zenodo panel in a Bionomia user’s Settings & Integrations changes to inform them that they may begin the auto-archival process. Clicking the “Integrate with Zenodo” button presents a user with Zenodo’s authentication screen where permissions may be granted to Bionomia to auto-create a dataset and link it to their account.
+</em></small></figcaption>
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable-linked-account.png">
+  <figcaption align="center"><small><em>Figure 3. Once a user has enabled the integration between Bionomia and Zenodo, their request is queued for processing and then pushed to Zenodo. The process typically takes a few minutes.
+</em></small></figcaption>
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/make-your-data-citable-DOI.png">
+  <figcaption align="center"><small><em>Figure 4. Once an archive has been created in Zenodo and a response has been received by its API, the assigned DOI is presented in a Bionomia user’s panel. The user may disconnect the integration with Zenodo whenever they wish.
+</em></small></figcaption>
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/cite-as.png">
+  <figcaption align="center"><small><em>Figure 5. A well-formatted citation of a natural history specimen data package for users to include in their curriculum vita.
+</em></small></figcaption>
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/presentation.png">
+  <figcaption align="center"><small><em>Figure 6. The presentation of a natural history specimen data package on Zenodo, auto-produced through integration with Bionomia.</em></small></figcaption>
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/versions.png">
+  <figcaption align="center"><small><em>Figure 7. The versions of natural history specimen data that auto-accrue in Zenodo for users of Bionomia that have enabled the integration.</em></small></figcaption>
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/orcid.png">
+</figure>
+<br></p>
+<p><br></p>
+<p><figure align="center">
+  <img src="/2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/natural-history.png">
+  <figcaption align="center"><small><em>Figure 8. The presentation of a work entry in ORCID for a user of Bionomia who has integrated their account with Zenodo and who has additionally made DataCite a trusted party.</em></small></figcaption>
+</figure>
+<br></p>
+<h3>References</h3>
+<p>McDade, L.A., D.R. Maddison, R. Guralnick, H.A. Piwowar, M.L. Jameson, K.M. Helgen, P.S. Herendeen, A. Hill, and M.L. Vis. 2011. Biology needs a modern assessment system for professional productivity. BioScience 61(8): 619–625. <a href="https://doi.org/10.1525/bio.2011.61.8.8">https://doi.org/10.1525/bio.2011.61.8.8</a></p>
+<p>Thessen, A.E., M. Woodburn, D. Koureas, D. Paul, M. Conlon, D.P. Shorthouse and S. Ramdeen. 2019. Proper attribution for curation and maintenance of research collections: Metadata recommendations of the RDA/TDWG Working Group. Data Science Journal 18(1): 54. <a href="http://doi.org/10.5334/dsj-2019-054">http://doi.org/10.5334/dsj-2019-054</a></p>
+<p>Wilkinson, M., M. Dumontier, I. Aalbersberg et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3: 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a></p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2021/12/07/2021-12-07-hardening-our-service/"><h1>Hardening our service</h1></a>
 
 <p class="meta">
@@ -157,96 +278,6 @@
 <small>Karthik Ram, Director of rOpenSci &amp; URSSI lead</small>
 </blockquote><h4>Looking Forward</h4>
 <p>This release is the first set of features in our path ahead working together to best support our global researcher base. While we are building feature sets around Supporting Information (non-software and non-data files) for journal publishers, we know that this space is evolving quickly and our partnership will respond to both the needs of researchers as well as the development of best practices from software and data initiatives. We will keep the community apprised of our future developments and we are always looking to expand our reach and iterate on what we’ve built. If you believe there are ways that Dryad and Zenodo better support research data and software publishing, please get in touch.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2020/10/20/2020-10-20-staying-open-to-open-options/"><h1>Staying open to open options</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    
-    
-    Sarah Jones,
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/tsmith.png" />
-    
-    
-    
-    Tim Smith,
-  
-    
-    
-    
-    
-    Tracy Teal,
-  
-    
-    
-    
-    
-    Marta Teperek,
-  
-    
-    
-    
-    
-    Laurian Williamson,
-  
-  on October 20, 2020
-</p>
-<hr />
-<div class="body"><p>Public institutions who wish to provide top quality data services, but who do not have the capacity to develop or to maintain the necessary infrastructures in-house, often end up procuring solutions from providers of proprietary, commercial services. This happens despite the fact that frequently, the very same public institutions, have strong policies and invest substantial efforts to promote Open Science.</p>
-<p>Why does this happen and are there alternative scenarios? What are the challenges from the institutional perspective? Why is it difficult for open source software providers to participate and successfully compete in tenders? And how can we ensure we always keep a range of service options open?</p>
-<p>Our intention is to highlight some of the inherent issues of using  tender processes to identify open solutions, to discuss alternative routes, and to suggest possible next steps for the community.</p>
-<h2>Open competition - unintentionally closed?</h2>
-<p>Procurement is often the preferred route for selecting new service providers at big public institutions. For example, the European Commission’s public procurement strategy determines thresholds above which it is obligatory to use open procedures for identifying new service providers. This is justified by the principles of transparency, equal treatment, open competition, sound procedural management and the need to put public funds to good use<sup class="footnote-ref" id="fnref-1"><a href="#fn-1">1</a></sup>. Hence, the legal teams at public institutions often perceive public procurement as the default option. Public procurement, however, often unintentionally blocks pathways to open solutions, favouring corporate providers of proprietary software.</p>
-<p>First, to ensure an equal and fair process, everything needs to be measured. For example, what does usability mean and what level is good enough? What is sufficient service availability? How is it going to be measured? With the emphasis on numbers and legal frameworks, there is little place for open science values and the importance of aligning with missions and visions.</p>
-<p>In addition, to facilitate competition, legal teams at public institutions sometimes question requirements or preferences, which seem to them too specific, or which might limit the number of parties able to respond to a tender. This might sometimes put smaller initiatives, with innovative or niche solutions at disadvantage.</p>
-<p>Teams going through the tender preparation are often faced with confidentiality clauses. They are intended to make the process fair and equal to everyone. This, however, can make communication for clarifications and scoping with prospective providers (or sometimes even with colleagues within the same department!) challenging. It also means that it might not be possible to communicate with the unsuccessful applicants why their bids were not successful and what areas of their application could have been improved. And it might prevent the sharing of lessons across the sector which is hugely valuable to prevent other institutions falling into the same pitfalls.</p>
-<p>Last, small institutional teams at libraries or IT departments who are tasked with finding new services for research data often lack the necessary experience and expertise in procuring solutions. Yet, suddenly they are faced with discussions with legal experts, legal jargon and lengthy documents they are often unfamiliar with and unsure how to tackle, or how to effectively explain what is needed.</p>
-<h2>Balancing values, costs and requirements</h2>
-<p>Providers of open source software, or providers of open services built on open software, are usually fully focused and resourced to simply do specifically that! They are rarely embedded in a larger unit that can market, tender or legally draft/validate responses. They either rely on upfront agreements for expanded functionality or scope where the resources are provided to effect the change, or third parties to offer the service selling and instantiation for specific needs. Hence when they see the needs of a new institute expressed in a tender document, they can often spot an easy match to their current or slightly extended functionality, but can't afford to speculate resources on trying to compete in an administrative process.</p>
-<p>The odds are low since they often will not have necessary documentation and proofs required in a typical tender process, particularly in an international context. They are unlikely to have the minimum income/turnover, or reference sites, or certifications typically demanded.  They may be excluded from tenders merely on the basis of not having a VAT number in a given country, or turnover in a given currency, or for not having been in existence for sufficient years, or not charging enough for the service. They are focused on what they do well, and often much above the level tendered for, but without the means to guarantee it. Hence, providers of open source software, or providers of open services built on open software perceive tenders as stacked against them.</p>
-<h3>Theatre of risk</h3>
-<p>Much of the challenge simply comes from open source projects being smaller organisations without dedicated personnel to perform compliance and legal work. Additionally, they aren't able to take and absorb as much risk. Tender processes often involve several types of statements to ensure against certain types of risks. While bigger organisations can absorb such risk, or litigate if needed, smaller organisations don’t have that capacity.</p>
-<p>However, this does not at all mean that they are riskier. The paperwork required does not in fact ensure the organisation proposing the tender against risk, it only has some paperwork to show that it tried. Big organisations can default on their obligations as often as smaller ones. In fact, large organisations may even make the choice to do this without significant negative impact, or decide to change focus. Smaller organisations on the other hand, are committed to that primary purpose as the core of their operations and are able to be more responsive and connected with the client.</p>
-<p>There is always risk involved in any relationship or process, but the requirements of the tender process does not in fact alleviate that risk, creating more risk mitigation theatre than actual risk reduction.</p>
-<h2>Alternative models</h2>
-<p>There are many different service delivery models that can be explored. Some of these may not fit a tender exercise, so it’s best to consider all routes first and chat to potential service providers before deciding which avenue to progress.</p>
-<ul>
-<li>Many companies run open source software on a commercial basis. Atmire, Cosector, Haplo and others can install and maintain services like DSpace and ePrints. They may not be able to respond to procurement exercises as they don’t own the solution so take care in how you frame the specification if you go down this route.</li>
-<li>Some open infrastructure is run on memberships or subscription models. DMPonline, for example, has an annual or three-year subscription for institutions and funders who wish to customise the tool. Dryad’s model is based on membership fees and individual data publishing charges.</li>
-<li>Providers like Jisc and GÉANT may broker sector-wide deals that help institutions procure services more easily. Recently Jisc launched a dynamic procurement framework for research data repositories which pre-approves common terms and conditions so institutions can do a lightweight mini-competition based on required functionality. This approach prevents tender exercises from being too heavyweight for smaller service providers, and helps institutions access a wider range of options.</li>
-</ul>
-<p>One challenge may be in convincing institutional boards that the university’s typical model for engaging external contractors may not be suitable and could limit the options of who can respond. Exploring some of these alternative models and the relative costs and benefits (e.g. supporting open scholarly infrastructures) is worthwhile.</p>
-<h2>How to change the status quo?</h2>
-<p>There are clearly a number of challenges facing research institutions and service providers alike. Everybody wants an open competition where everybody is fairly evaluated on their relative strengths, however the prevalent methods for assessing service options and choosing a provider do not always facilitate this. How can we change the status quo and ensure we keep all options open?</p>
-<ul>
-<li>Can we provide a forum for research organisations to share lessons learned from running procurement exercises so others have a place to seek advice?</li>
-<li>Are we able to adjust the de-facto institutional procedures, or consult with providers before defining tenders to ensure the framing doesn’t exclude certain groups or service delivery models? For example, consider the weighting of the functional and non-functional requirements. Should the final deciding criteria be cost or alignment with values?</li>
-<li>Can we share tactics on helping institutional boards to consider alternative options and challenge preconceptions that it will be cheaper, easier, more sustainable?</li>
-<li>Can sector-wide deals be brokered to facilitate a broader range of providers to engage, or how can smaller service providers be enabled to compete with larger operations better placed to respond to tenders?</li>
-<li>Can collective bargaining help the sector to secure better terms for education which embody our core values of openness, or can these factors be more heavily weighted in the evaluation criteria?</li>
-<li>How can the scholarly community work collectively to invest in and sustain open infrastructure?</li>
-<li>How do we ensure one institution’s investment in a platform (e.g. to develop a new feature) benefits the sector at large?</li>
-<li>What is the role of user groups to help direct development roadmaps?</li>
-</ul>
-<p>Much discussion between institutions and service providers is needed to align needs and visions, especially as tender processes will involve a far wider range of stakeholders who may not have an awareness of the service being procured and what matters in terms of delivery. We hope to provide a forum to explore some of these points in the “<a href="https://events.geant.org/event/205/">Delivering RDM services</a>” workshop which will run adjacent to the RDA plenary in November.</p>
-<p>If we want to keep our options open, we need to share experiences and collectively define a more flexible procedure for commissioning our scholarly infrastructure.</p>
-<div class="footnotes">
-<hr>
-<ol><li id="fn-1"><p>Public procurement within the European Union: <a href="https://ec.europa.eu/growth/single-market/public-procurement_en#:~:text=To%20create%20a%20level%20playing,purchase%20goods%2C%20works%20and%20services">https://ec.europa.eu/growth/single-market/public-procurement_en#:~:text=To%20create%20a%20level%20playing,purchase%20goods%2C%20works%20and%20services</a><a href="#fnref-1" class="footnote">&#8617;</a></p></li>
-</ol>
-</div>
 </div>
   
   <br />
