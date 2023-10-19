@@ -70,6 +70,51 @@
 
   
     
+<a href="2023/10/19/2023-10-19-upgrade-issues/"><h1>Zenodo upgrade issues</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="static/img/authors/lnielsen.jpg" />
+    
+    
+    
+    Lars Holm Nielsen,
+  
+  on October 19, 2023
+</p>
+<hr />
+<div class="body"><p>As many of you noticed, the Zenodo upgrade last Friday didn’t go as smoothly as hoped. Afterwards Zenodo was sluggish and file uploads were painfully slow, some features didn’t quite work as expected. We’ve been working flat-out behind the scenes to steer Zenodo out of these stormy waters. We’d like to keep you updated on the issues we had, what we solved so far, and what we are still working on.</p>
+<p>The upgrade involved orchestration of three components; Zenodo’s refactored software platform, the data, and the technical infrastructure:</p>
+<ol>
+<li>We’d developed the refactored software platform in collaboration with partners around the world, 6 of which already had production instances running on the new code (*), giving confidence, but we none the less tested extensively on the full feature set used on Zenodo. We’d been smoothing off rough edges, and were prepared to rapidly address more that you might discover after release.</li>
+<li>As custodians of your data, for months we meticulously exercised the process of migration to the new system to ensure every bit made it reliably, and also have multiple backups as safety and for verification.</li>
+<li>We’d revamped the technical infrastructure to better serve the continued scaling demanded by Zenodo’s ceaseless growth, by using components heavily used in our other front-line services, which none the less we also stress/performance tested in the preparations.</li>
+</ol>
+<p>The main issue after the upgrade was immediately evident that file upload/download was painfully slow (1GB file taking 1 hour instead of 20 seconds). We worked the weekend to finally discover that circumventing the front-facing load balancer alleviated the problem, and on removing it we restored Zenodo’s expected data performance (the root cause is still being investigated by the infrastructure experts).</p>
+<p>We also had indexing issues with records which meant they didn't show up despite the data having been migrated, and despite having had successful test migration runs. We have almost finished to resolve this issue and expect the main issues to have been solved by Monday.</p>
+<p>We want to thank you for all the incredible support and understanding that we have been receiving even under such difficulties. We’ve not ignored the functionality hiccups you’ve been reporting, we already solved some in parallel to the performance debugging. Please rest assured that we continue to work relentlessly to address all your support requests and feedback, and to address all outstanding issues in a timely manner to help you publish/access your content.</p>
+<p>We apologise for all the inconvenience it has caused. We hope once we're over the hiccups the new Zenodo will serve you and your communities well!</p>
+<p>Final lesson learnt: Friday 13th[**] might not have been a good day for a major release after all.</p>
+<p>(*)</p>
+<ul>
+<li>Northwestern Uni: <a href="https://prism.northwestern.edu/">https://prism.northwestern.edu/</a></li>
+<li>NYU: <a href="https://ultraviolet.library.nyu.edu/">https://ultraviolet.library.nyu.edu/</a></li>
+<li>GEO Knowledge Hub: <a href="https://gkhub.earthobservations.org/">https://gkhub.earthobservations.org/</a></li>
+<li>Caltech Library: <a href="https://data.caltech.edu/">https://data.caltech.edu/</a></li>
+<li>TUGraz: <a href="https://repository.tugraz.at/">https://repository.tugraz.at/</a></li>
+<li>TUWien: <a href="https://researchdata.tuwien.ac.at/">https://researchdata.tuwien.ac.at/</a></li>
+</ul>
+<p>(**) We chose a Friday as Zenodo has considerable less traffic during weekends and thus as risk mitigation measure we would impact less users if there were problems (as there unfortunately turned out to be).</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="2023/10/13/2023-10-13-zenodo-rdm/"><h1>Zenodo launched on next generation platform - InvenioRDM 🚀</h1></a>
 
 <p class="meta">
@@ -303,64 +348,6 @@
 <li><a href="https://help.zenodo.org/docs/about/whats-new/">What's new?</a></li>
 <li><a href="https://help.zenodo.org/docs/about/whats-changed/">What's changed?</a></li>
 </ul>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="2023/09/06/2023-09-06-zenodo-rdm/"><h1>Zenodo.org unavailable for 2 hours on Sep 29 from 06:00 to 08:00 UTC</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="static/img/authors/lnielsen.jpg" />
-    
-    
-    
-    Lars Holm Nielsen,
-  
-  on September 6, 2023
-</p>
-<hr />
-<div class="body"><h4>TL;DR</h4>
-<p>Zenodo.org will be unavailable for 2 hours on September 29th from 06:00-08:00 UTC.</p>
-<div class="alert alert-danger" role="alert"><strong>IMPORTANT:</strong> You MUST save any changes in advance of the migration window to avoid losing the changes. In particular, make sure you click "Save" button on any upload (unpublished as well as published).</div><h2>Zenodo relaunching on next-generation platform - InvenioRDM</h2>
-<p>We're excited to finally announce the launch date for migrating Zenodo to our next-generation platform. On September 29th, Zenodo's underlying technical platform will be migrated to InvenioRDM, a digital repository platform born out of Zenodo and developed together with 25 partners. See also our <a href="https://blog.zenodo.org/2022/12/07/2022-12-07-zenodo-on-inveniordm/">earlier announcement</a>.</p>
-<h3>Demo site</h3>
-<p>You can see a demo of the new Zenodo at <a href="https://zenodo-rdm-qa.web.cern.ch">https://zenodo-rdm-qa.web.cern.ch</a>. The demo site has a snapshot of Zenodo production data from end-August.</p>
-<div class="alert alert-info" role="alert"><strong>Work in progress:</strong> You'll notice that not everything is finished yet. E.g. record files and community logos are not yet visible as the demo system does not have access the live data. Similarly, some features still need the final polish which is being done throughout September.</div><p><strong>Logging in</strong></p>
-<p>If you have an account on Zenodo.org, you can login on the demo site by <a href="https://zenodo-rdm-qa.web.cern.ch/lost-password/">resetting your password</a> using the same email address as you registered with on Zenodo.org.</p>
-<h3>FAQ</h3>
-<h4>Why must I save the changes before the migration?</h4>
-<p>We are setting up an entirely new production system, and thus once the intervention is over you will be required to login again. This means that any page you had open on Zenodo.org prior to the intervention starting, will no longer be able to interact with Zenodo after the intervention is over, and thus the changes you made will be lost. To avoid losing changes, you must simply ensure that you save any changes prior to the intervention starting on Sep 29 at 06:00 UTC.</p>
-<h4>What's new/changed?</h4>
-<p>We're launching several new features together with the release as well. A full announcement is going out two weeks in advance of the release, thus following is a quick overview of some of the new features:</p>
-<ul>
-<li><strong>Community members</strong>: Ability for multiple users to curate/manage a community, as well as the ability of community members to see files in restricted records.</li>
-<li><strong>Reviews</strong>: Community curators will be able to edit submissions to their community, and have a conversation with the submitter to fix issues prior to the submission.</li>
-<li><strong>Sharing</strong>: New options for sharing records with specific users and as well as generating secret links that can be shared.</li>
-<li><strong>Deposit form</strong>: Auto-completion of creators/contributors, affiliations and subjects from ORCiD, ROR, and OECD Fields of Science and Technology as well as improved funding and license selectors.</li>
-<li><strong>Web accessibility</strong>: We still have to make many more improvements towards being level AA complaint with the W3C Web Content Accessibility Guidelines, however the new platform has overall made significant improvements to web accessibility of the platform.</li>
-<li><strong>User interface</strong>: Zenodo will look familiar, but we've introduced many smaller usability improvements to the user interface as well as better usage of screen space.</li>
-</ul>
-<h4>Will feature X still work?</h4>
-<p>Yes, we provide backward compatibility for all existing features. We will be launching a series of new and improved features which will be announced 2 weeks before the migration.</p>
-<h4>Will your APIs be backward compatible?</h4>
-<p>Yes, we do our outmost to ensure backward compatibility of our APIs, and that your integration will continue to work on the new platform as well.</p>
-<h4>Will I be required to update my API integration?</h4>
-<p>After Zenodo on InvenioRDM has been launched, we will deprecate some of our existing APIs. We will provide a migration period of 1-year for the transition. New features will only be available on the new API. The new API is similar to the existing API to ease the transition.</p>
-<h4>Will the community curators be able to edit my existing records?</h4>
-<p>If your record has been accepted into a community which you're not the owner of, you will receive a request to grant community curators access to edit the metadata of your record. If you decline the request, your record will be removed from the community. If you neither accept or decline the request within 6 months, the community curators will be granted access to edit the metadata.</p>
-<h4>Will community curators be able to view the files of my closed access or restricted record?</h4>
-<p>If your record has been accepted into a community which you're not the owner of and your record is either closed access or restricted access, you will receive a request to grant community curators access to view the files of your closed/restricted record. If you decline the request, or you do not accept the request within 6 months, your record will be automatically removed from the community.</p>
-<h4>Will old links still work?</h4>
-<p>Yes. We have ensured that all old links have been redirected to their new location. This include e.g. also a translation layer that ensure search queries still work.</p>
-<h4>You're releasing on Friday?</h4>
-<p>Yes. The migration process starts already on Monday Sep 25th and will last throughout the week. In addition we have senior staff on duty during the full weekend in case of any problems.</p>
 </div>
   
   <br />
