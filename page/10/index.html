@@ -70,6 +70,89 @@
 
   
     
+<a href="../../2018/07/18/2018-07-18-usage-statistics/"><h1>Usage statistics launched!</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
+    
+    
+    
+    Alex Ioannidis,
+  
+  on July 18, 2018
+</p>
+<hr />
+<div class="body"><p>We are happy to announce the launch of usage statistics on Zenodo. From today,
+you will find the number of views and downloads on record pages, and you can
+sort search results by
+<a href="https://zenodo.org/search?sort=mostviewed">most viewed</a>.
+By default we roll-up usage statistics for all versions of a record. However,
+it is also possible to see detailed usage statistics for the specific version
+of a record.</p>
+<h3>Privacy and standards compliant</h3>
+<p>We strongly believe in user’s right to privacy, thus we have spend a lot of
+time to design our system to ensure all tracking is completely anonymized. Our
+usage statistics is further tracked according to industry standards such as
+the <a href="https://www.projectcounter.org/">COUNTER Code of Practice</a>
+as well as the <a href="https://peerj.com/preprints/26505/">Code of Practice for Research Data Usage Metrics</a>
+and thus allows you to compare metrics from Zenodo with other compliant
+repositories. You can read much more about this, and exactly how and what we
+track in our <a href="https://help.zenodo.org/#statistics">FAQ</a>.</p>
+<p>The launch today, also only marks the beginning. We will later also be adding
+usage statistics e.g for your communities, so stay tuned!</p>
+<p>If you have any questions or feedback (positive and negative) don’t hesitate
+to <a href="https://zenodo.org/support">get in touch</a> with us.</p>
+<p><img src="../../2018/07/18/2018-07-18-usage-statistics/usage-stats.png" alt="Zenodo Usage Statistics"></p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
+<a href="../../2018/05/25/2018-05-25-gdpr/"><h1>Zenodo and General Data Protection Regulation (GDPR)</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+    
+    
+    
+    Lars Holm Nielsen,
+  
+  on May 25, 2018
+</p>
+<hr />
+<div class="body"><p>The General Data Protection Regulation (GDPR) takes effect in Europe on May 25, 2018. The GDPR provides a legal framework for the collection and processing personal information for people in the European Union (EU). The goal is to provide individuals with more control over their personal data.</p>
+<p>Zenodo is hosted at CERN, which is an Inter-Governmental Organization (IGO), with its seat in Switzerland. Despite the fact that this means CERN has a special status, we are striving for the same high standards of data protection afforded by GDPR. In fact the GPDR has provisions covering data transfer to/from IGOs and the concept of "adequate protection", i.e. qualified as equivalent. This is what we will offer in Zenodo.</p>
+<p>CERN takes seriously the privacy and protection of personal information, and have appointed a Data Protection Officer and, as mentioned above, are working on policies to ensure CERN is compatible with GDPR.</p>
+<p>Specifically on Zenodo, we are taking the following actions:</p>
+<ul>
+<li>Review and update our Privacy Policy to provide specific information about what data we collect, how we use it and when we delete it.</li>
+<li>Assess our collecting of personal information.</li>
+<li>Evaluate and ensure that any third-party tools and services are GDPR compatible.</li>
+</ul>
+<p>If you wish to review the personally identifiable information about you maintained by Zenodo, or would like your information removed from our records, you may <a href="https://zenodo.org/support">contact us</a> anytime.</p>
+<p>More information:</p>
+<ul>
+<li><a href="https://about.zenodo.org/privacy-policy/">Zenodo's privacy policy</a></li>
+<li><a href="https://odpp.web.cern.ch">CERN Office for Data Protection</a></li>
+<li><a href="https://home.cern/data-privacy-protection-statement">CERN Data Privacy Protection Statement</a></li>
+</ul>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2018/04/10/advanced-search-guide/"><h1>New help guide: Advanced search</h1></a>
 
 <p class="meta">
@@ -99,97 +182,6 @@ and 2011. The guide also includes a full reference of all available fields you c
 <p>Under the hood our search engine is powered by
 <a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch</a> - the
 most powerful open source search engine available on the market today.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/11/02/version-field/"><h1>Version field launched!</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
-    
-    
-    
-    Alex Ioannidis,
-  
-  on November 2, 2017
-</p>
-<hr />
-<div class="body"><p>As of today, we have extended our metadata schema with the <code>version</code> term, so you can explicitly specify the version of your software, dataset, or any other type of upload.
-This allows you to use the version tags such as 1.2.1 or 2017.01 instead of the default version numbers such as 1, 2 or 3.
-The addition is part of our efforts to make software a citable, first-class citizen in the world of scientific research.</p>
-<p><img src="../../2017/11/02/version-field/version-field.png" alt="Deposit form"></p>
-<p>At the moment the field accepts any kind of text as input, although we strongly suggest that you use <a href="https://semver.org/">semantic versioning</a> for machine-readability.</p>
-<p>The version field is directly integrated within our search results and record pages.</p>
-<p><img src="../../2017/11/02/version-field/version-records-search.png" alt="Record page">
-<img src="../../2017/11/02/version-field/version-records-ui.png" alt="Record page"></p>
-<h4>What about GitHub releases?</h4>
-<p>This change extends to our GitHub integration, which from now on will automatically populate the version field using the git tag of your GitHub release.
-You don't have to worry about all GitHub releases that have been already published on Zenodo - they have all been updated with their corresponding release tags.</p>
-<h4>Does this affect the order of the record versions?</h4>
-<p>No, the order of the record's versions remains as before, i.e.: record versions are ordered chronologically by the record creation time.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/10/10/grants-and-language-update/"><h1>Extended grant support, ORCID and language field.</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
-    
-    
-    
-    Krzysztof Nowak,
-  
-  on October 10, 2017
-</p>
-<hr />
-<div class="body"><p>Today, we are introducing three additions to Zenodo:</p>
-<ol>
-<li>Extended grant support</li>
-<li>Language field</li>
-<li>ORCID for authors</li>
-</ol>
-<h2>Extended grant support (powered by OpenAIRE)</h2>
-<p>We are expanding our grants database with over 620,000 grants from 8 new funders such as the National Science Foundation (US) and Wellcome Trust (UK) - all thanks to <a href="https://openaire.eu/">OpenAIRE</a>'s ever growing grants database.</p>
-<p><img src="../../2017/10/10/grants-and-language-update/grants.png" alt="Zenodo OpenAIRE grants database"></p>
-<p>So far we have only been supporting grants from the European Commission (FP7 and Horizon 2020). Today our dataset has grown and contains grants from the following funders:</p>
-<ul>
-<li>National Science Foundation (USA) - 497646 grants</li>
-<li>European Commission (EU) - 39409 grants</li>
-<li>Foundation for Science and Technology (Portugal) - 37277 grants</li>
-<li>National Health and Medical Research Council (Australia) - 24354 grants</li>
-<li>Netherlands Organisation for Scientific Research (The Netherlands) - 24180 grants</li>
-<li>Australian Research Council (Australia) - 23011 grants</li>
-<li>Wellcome Trust (United Kingdom) - 12196 grants</li>
-<li>Ministry of Science and Education (Croatia) - 2120 grants</li>
-<li>Ministry of Education, Science and Technological Development (Serbia) - 777 grants</li>
-</ul>
-<p>which means that our grants database grew from nearly <strong>40,000</strong> to over <strong>660,000</strong> grants! We wouldn't have been able to do that if it wasn't for the OpenAIRE team and their hard work in collecting, maintaining and distributing the grants database for the benefit of Open Science!</p>
-<h2>Language field</h2>
-<p>Today we are also adding a new language field to our metadata, which allows you to record the primary language of an upload. You can select the language in the upload form simply by starting to type the English name, a 2-letter or a 3-letter ISO 639 code:</p>
-<p><img src="../../2017/10/10/grants-and-language-update/language.png" alt="Language for Zenodo"></p>
-<p>The new language field supports all languages defined in ISO 639-3, which in total defines 436 individual and macro-languages. For the full reference of language codes see the <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">Library of Congress ISO 639 Language List</a>.</p>
-<h4>What if my record contains more than one language?</h4>
-<p>The field is used to specify the primary language of the resource, hence if, e.g., a thesis is written in Danish and has an English abstract, then the primary language is Danish. Similarly, the primary language of a paper written in English, which is on the topic of Greek linguistics, thus containing a lot of text in Greek, is English.</p>
-<p>There are always cases where it is not possible to clearly determine the primary language, for example for a dataset containing the mapping between common Polish and French phrases. In those special cases you can always use ISO 639-3 code <a href="https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?code_ID=306"><code>mul</code> (Multiple Languages)</a>.</p>
-<h2>ORCID for authors</h2>
-<p>Last but not least, you can now include an author's ORCID under the <em>Authors</em> section of the metadata on the deposit web interface.
-<img src="../../2017/10/10/grants-and-language-update/orcid.png" alt="Zenodo author ORCID"></p>
 </div>
   
   <br />
@@ -268,7 +260,7 @@ You don't have to worry about all GitHub releases that have been already publish
               <div class="col-xs-2 col-md-2">
                 <h5>Contribute</h5>
                 <ul class="list-unstyled">
-                  <li><a href="https://github.com/zenodo/zenodo"><i class="fa fa-external-link"></i> GitHub</a></li>
+                  <li><a href="https://github.com/zenodo/zenodo-rdm"><i class="fa fa-external-link"></i> GitHub</a></li>
                   <li><a href="https://zenodo.org/donate"><i class="fa fa-external-link"></i> Donate</a></li>
                 </ul>
               </div>
