@@ -70,6 +70,35 @@
 
   
     
+<a href="../../2022/07/13/2022-07-13-fighting-spam-safe-listing/"><h1>Fighting spam - safe listing</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
+    
+    
+    
+    Lars Holm Nielsen,
+  
+  on July 13, 2022
+</p>
+<hr />
+<div class="body"><p>Zenodo's vision is to enable researchers around the world to share and preserve any research output from any discipline via a seamless user experience. The same features that make it easy for any researcher to share and preserve their research, as a side effect also make it easy for spammers to misuse our service.</p>
+<p>As Zenodo grew in popularity, our spam problem grew as well. We firmly believe in the need to make sharing and preserving research data as easy as possible, and thus we have always opted against introducing factors blocking researchers' ability to share and preserve their research instantly. So far, we have been fighting spammers with automated classification systems and manual reviews, yet with every counter-measure we've taken, spammers have adapted their methods.</p>
+<p>Today, we're introducing yet another counter-measure to fight spammers. Content from new users will, as of today, be ranked below content from safelisted users. This means that spam will be less visible in all search results, allowing our automated classification system more time to catch the spam. In addition, we will be introducing a human review of all new users uploading content to Zenodo that will allow us to safelist new users and catch spammers. The human review is in progress of being introduced as part of our support operations, and we will also go through the backlog of existing users to safelist them. We have seeded the initial safelist with all users who logged in via ORCiD and GitHub, and users with existing uploads accepted in communities.</p>
+<p>All in all, if you're an existing Zenodo user and didn't login via ORCiD or GitHub, or had any of your uploads accepted in a community, your records will appear at the bottom of search results. We will be working on safelisting all existing users as fast as possible.</p>
+<p>If you're a new Zenodo user, your uploads will also appear at the bottom of search results until our manual review has safelisted you. We plan safelisting new users at least once a day during business days, but until we have worked through the backlog of existing users there might be a longer delay.</p>
+<p>The new feature in no way limits you ability to share and preserve research results. You can still upload your data, software and publications to Zenodo, and get a DOI instantly. The new measures only make sure that spam that makes it past our automated classification system is much less visible in search results, until a human review can catch the spammer.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="../../2022/06/27/2022-06-27-zenodo-enables-a-new-workflow-for-collectors-of-natural-history-specimens/"><h1>Zenodo Enables a New Workflow for Collectors of Natural History Specimens</h1></a>
 
 <p class="meta">
@@ -218,69 +247,6 @@
 <h3>Towards a stable future</h3>
 <p>This is of course not the end of the story. We expect Zenodo to continue growing at the same rate and we have many plans to further stabilize and scale our infrastructure. We have closely monitored our database and search cluster performance, and identified points of improvement based on industry best practices. We’re also eager to explore ways to provide cached versions of our pages.</p>
 <p>Last, but not least, our efforts in building and rebasing Zenodo on top of <a href="https://inveniosoftware.org/products/rdm/">InvenioRDM</a>, a turn-key solution for digital repositories, come in the form of a bottom-to-top revamp of our software stack, based on the same pillars that made Zenodo what it is today: a resilient,  top-of-the-class user experience, and scalable platform at the service of Open Science.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2021/02/08/2021-02-08-doing-it-right/"><h1>Doing it Right: A Better Approach for Software &amp; Data</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    
-    
-    Daniella Lowenberg,
-  
-  on February 8, 2021
-</p>
-<hr />
-<div class="body"><p><em>Cross posted at <a href="https://blog.datadryad.org/2021/02/08/doing-it-right-a-better-approach-for-software-amp-data/">Dryad</a></em></p>
-<p>The Dryad and Zenodo teams are proud to announce the launch of our first formal integration. As we’ve <a href="https://blog.datadryad.org/2020/03/10/dryad-zenodo-our-path-ahead/">noted</a> over the last years, we believe that the best way to support the broad scientific community in publishing their outputs is to leverage each other's strengths and build together. Our plan has always been to find ways to seamlessly connect software publishing and data curation in ways that are both easy enough that the features will be used but also beneficial to the researchers re-using and building on scientific discoveries.This month, we’ve released our first set of features to support exactly that.</p>
-<h4>Uploading to Zenodo Through Dryad</h4>
-<p>Researchers submitting data for curation and publication at Dryad will now have the option to upload code, scripts, and software packages on a new tab “Upload Software”. Anything uploaded here will be sent directly to Zenodo. Researchers will also have the opportunity to select the proper license for their software, as opposed to Dryad’s CC0 license.</p>
-<p><br></p>
-<p><figure>
-  <img src="/2021/02/08/2021-02-08-doing-it-right/screen1.png" style="width:100%">
-  <figcaption align="center"><small><em>The Dryad upload form now includes an option to upload code files that will be triaged and sent to Zenodo</em></small></figcaption>
-</figure>
-<br></p>
-<p>Those familiar with Dryad may know that Dryad has a feature to keep datasets private during the peer review period, with a double blind download URL that allows for journal offices and collaborators to access the data prior to manuscript acceptance. Zenodo hosted software will be included in this private URL and will be held from the public until the dataset is ready to be published.</p>
-<p><br></p>
-<p><figure align="center">
-  <img style="width: 20%" src="/2021/02/08/2021-02-08-doing-it-right/screen2.png">
-  <figcaption align="center"><small><em>Before submitting researchers are able to preview all uploaded files</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img style="width: 70%" src="/2021/02/08/2021-02-08-doing-it-right/screen3.png">
-  <figcaption align="center"><small><em>Private for Peer Review link allows for auto download of the Dryad data as well as the software files in Zenodo</em></small></figcaption>
-</figure>
-<br></p>
-<p>After curation and publication of the dataset, the Dryad and Zenodo outputs are linked publicly on each landing page and indexed with DataCite metadata. Versioning and updating of either package can happen at any time through the Dryad interface.</p>
-<p><br></p>
-<p><figure align="center">
-  <img style="width: 80%" src="/2021/02/08/2021-02-08-doing-it-right/screen4.png">
-  <figcaption align="center"><small><em>Published dataset at Dryad prominently allows researchers to navigate to and download code files from Zenodo</em></small></figcaption>
-</figure>
-<br></p>
-<p><br></p>
-<p><figure align="center">
-  <img style="width: 60%" src="/2021/02/08/2021-02-08-doing-it-right/screen5.png">
-  <figcaption align="center"><small><em>Software package is downloadable, with proper license, and linked to dataset at Zenodo</em></small></figcaption>
-</figure>
-<br></p>
-<h4>Elevating Software</h4>
-<p>Throughout our building together, we worked with researchers across scientific disciplines to both test the look and feel of the features but also to understand how data and software are used together. Through conversations with folks at <a href="https://www.software.ac.uk/">Software Sustainability Institute (SSI)</a>, <a href="https://www.software.ac.uk/">rOpenSci</a>, <a href="https://www.researchsoft.org/">Research Software Alliance (ReSA)</a>, <a href="http://urssi.us/">US Research Software Sustainability Institute (URSSI)</a> and leaders in the software citation space, we understood that while researchers may not always think of their R or Python scripts as a piece of software, integrations like this are essential to elevate software as a valued, published, and citable output.</p>
-<blockquote><p><em>This work between the organizations represents a massive win for open science and reproducibility. Besides the lack of incentives to share, a significant source of friction for researchers is the burden of preparing research artifacts for different repositories. By simplifying this process and linking research objects, Dryad and Zenodo are not only making it easier to share code and software, but also dramatically enhancing discoverability and improving data and software citation.</em></p>
-<small>Karthik Ram, Director of rOpenSci &amp; URSSI lead</small>
-</blockquote><h4>Looking Forward</h4>
-<p>This release is the first set of features in our path ahead working together to best support our global researcher base. While we are building feature sets around Supporting Information (non-software and non-data files) for journal publishers, we know that this space is evolving quickly and our partnership will respond to both the needs of researchers as well as the development of best practices from software and data initiatives. We will keep the community apprised of our future developments and we are always looking to expand our reach and iterate on what we’ve built. If you believe there are ways that Dryad and Zenodo better support research data and software publishing, please get in touch.</p>
 </div>
   
   <br />
