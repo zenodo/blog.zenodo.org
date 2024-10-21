@@ -70,6 +70,48 @@
 
   
     
+<a href="2024/10/21/2024-10-21-swh/"><h1>Zenodo launches integration with Software Heritage</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="static/img/authors/lnielsen.jpg" />
+    
+    
+    
+    Lars Holm Nielsen,
+  
+  on October 21, 2024
+</p>
+<hr />
+<div class="body"><p>Zenodo and <a href="https://www.softwareheritage.org/">Software Heritage</a>, through the EU-funded <a href="https://faircore4eosc.eu/">FAIRCORE4EOSC</a> project, have launched a new integration. In order to fulfill the promise of an interconnected and interoperable academic ecosystem, research software infrastructures should support the archiving of source code within the universal source code archive, contributing to the global software commons.
+This integration ensures that software source code deposited in Zenodo is automatically archived in Software Heritage. It implements the recommendations from the <a href="https://data.europa.eu/doi/10.2777/28598">EOSC Scholarly Infrastructures for Research Software</a> report:</p>
+<p><em>“In the 21st century, many research activities use computing systems to monitor their experiments, to visualise or analyse their results, or to check hypotheses through simulation.It has therefore become essential to archive, preserve and share research software.”</em></p>
+<p><em>“Over the past decade, awareness has been raised about the importance of software in the scholarly world. Several infrastructures have started to be built, or adapted, to address some of the following key challenges that need to be tackled to put software on equal footing with other research outputs in the scholarly world:</em></p>
+<ul>
+<li><em>Archiving software to ensure research software artifacts are not lost.</em></li>
+<li><em>Referencing software to ensure research artifacts can be precisely identified.</em></li>
+<li><em>Describing software to easily discover and identify research software artifacts.</em></li>
+<li><em>Crediting all authors to ensure their contributions are recognized.”</em></li>
+</ul>
+<h4>Zenodo: Research software + Versioning + GitHub</h4>
+<p>Zenodo has long had a strong focus on supporting research software. Since 2014 Zenodo has an integration with GitHub that enables researchers to easily archive research software in GitHub into Zenodo. Upon deposit of the research software in Zenodo (either from GitHub or directly in Zenodo), the researcher would obtain a DOI (Digital Object Identifier) which would facilitate the persistent identification of software and support researchers in adopting the <a href="https://doi.org/10.7717/peerj-cs.86">Software Citation Principles</a>, in particular in citing research software papers. The Zenodo versioning feature further enabled both the citation of individual snapshots of software vs. citing a software project as a whole. Today, Zenodo is the <a href="https://doi.org/10.5438/1nmy-9902">largest minter of software DOIs</a> and is able to <a href="https://blog.zenodo.org/2019/01/10/2019-01-10-asclepias/">track citations to software independently</a> of which persistent identifier was used in the citation.</p>
+<h4>Integration with Software Heritage</h4>
+<p>The new integration between Zenodo and Software Heritage enhances the capabilities to archive, reference, describe, and cite research software artifacts. Most of the process occurs behind the scenes, ensuring seamless and transparent software archiving for researchers, regardless of their workflow.</p>
+<div align="center" style="padding:20px"><img src="/2024/10/21/2024-10-21-swh/zenodo.png" width="100%" /><br/><i>Figure 1 - Zenodo record for a software deposit showing that it has been archived in Software Heritage in the bottom right corner.</i></div><p>When a researcher deposits software in Zenodo, the software will be automatically sent to Software Heritage (if the files are publicly accessible). Zenodo then obtains the associated Software Hash Identifier (<a href="https://www.swhid.org/">SWHID</a>), links it with the DOI, and displays it on the record landing page. The DOI integrates with the scholarly publishing ecosystem, while the SWHID provides direct access to the archived source code, including the full version history. This bi-directional linking ensures interoperability between two key identifiers for research software.</p>
+<div align="center" style="padding:20px"><img src="/2024/10/21/2024-10-21-swh/swh.png" width="100%" /><br/><i>Figure 2 - The corresponding Zenodo software record in Software Heritage.</i></div><p>In addition to archiving software in Software Heritage, Zenodo has enhanced the upload form with software-specific fields, such as programming languages and repository URLs on top of our already existing fields such as the SPDX license field. We’ve also added support for CodeMeta and Citation File Format export formats.</p>
+<h4>What’s next?</h4>
+<p>While the core integration with Software Heritage has launched, further backend improvements are planned for the coming six months, primarily aimed at improving interoperability. Additionally, this integration will be fully incorporated into InvenioRDM, making it easier for other repositories, such as institutional ones, to <a href="https://docs.softwareheritage.org/devel/swh-deposit/index.html">integrate with Software Heritage</a>.</p>
+<p>This work was funded by the European Commission through grant agreement no. <a href="https://doi.org/10.3030/101057264">101057264</a> (FAIRCORE4EOSC).</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="2024/10/21/2024-10-21-production/"><h1>EU Open Research Repository Moves to Production</h1></a>
 
 <p class="meta">
@@ -151,43 +193,6 @@
 <p>You can also try your search in <a href="https://zenodo.org/communities">Zenodo Communities</a>, A Zenodo community provides a space for domains, projects, and institutions to curate and manage a collection of their research outputs and share with members of the community and beyond (for example, <a href="https://zenodo.org/communities/search?q=&amp;f=funder%3A01cwqze88&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest">some Communities funded by NIH</a>).</p>
 <p><strong>Full details about the challenge can be found <a href="https://www.herox.com/dataworks">here</a>.</strong></p>
 <p>We encourage you and your team to submit your project proposals. Your ideas could shape the future of healthcare.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="2024/03/20/2024-03-20-eu-open-research-repository/"><h1>EU Open Research Repository</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="static/img/authors/lnielsen.jpg" />
-    
-    
-    
-    Lars Holm Nielsen,
-  
-  on March 20, 2024
-</p>
-<hr />
-<div class="body"><p>The European Commission and CERN are today launching a pilot of the new EU Open Research Repository that welcomes research outputs (data, software, posters, presentation, project deliverables) stemming from one of EU’s research and innovation funding programmes such as Horizon Europe and Euratom.</p>
-<div align="center" style="padding:20px"><img src="/2024/03/20/2024-03-20-eu-open-research-repository/frontpage.png" width="50%" /></div><h4>Supporting EU Open Science policy</h4>
-<p>The EU has increasingly supported the implementation of the Open Science policy in successive Research and Innovation Framework Programmes, starting from the Open Access pilot in FP7, adding Open Data provisions in Horizon 2020, and laying down in Horizon Europe a set of provisions for open science practices such as open access to scientific publications, open access to research data and responsible management of research data, notably through the mainstreaming of data management plans and in line with the FAIR principles. This evolution has been accompanied by several EU-funded actions to support beneficiaries to better manage their research outputs and to facilitate the implementation of the programme provisions. This has notably included support to the creation of Zenodo, a general-purpose open repository operated by CERN, allowing researchers to deposit research papers, data sets, research software, reports, and any other research related digital outputs.</p>
-<p>The new EU Open Research Repository, a Zenodo-community, capitalizes on past investments made in Zenodo and helps EU programme beneficiaries comply with the new FAIR and open science requirements, by implementing an easy go-to solution in Zenodo for beneficiaries to make data FAIR in practice. The repository is managed by CERN on behalf of the European Commission.</p>
-<h4>Pilot</h4>
-<p>Currently in its pilot phase and set to be fully operational during autumn 2024, the EU Open Research Repository is constantly evolving. Efforts are committed to integrating cutting-edge features, including assisted curation and FAIR (Findable, Accessible, Interoperable, and Reusable) assistance, to further support the research community. The goal is to provide researchers with a simple goto solution for making their publicly funded research open and as FAIR as possible.</p>
-<h4>Supporting EU research projects</h4>
-<p>Today, more than 500 EU-funded research projects already have a Zenodo-community where they share their research outputs. The EU Open Research Repository will index all these and future project communities under a single umbrella and provide them with enhanced features to enable all project partners to easily share the project’s research outputs. Zenodo has since its launch more than 10 years ago supported linking research outputs with the EU grant that funded the work, which means that Zenodo today hosts more than 100,000 research outputs from more than 11,000 different grants.</p>
-<p>Several early adopter projects from different domains (BY-COVID, FAIR-IMPACT, FAIRplus, GDI, iMagine, interTwin, RESILIENCE, SERPENTINE) are collaborating to help provide feedback on the features developed for the new repository. Other projects interested in adopting the new features can <a href="https://zenodo.org/communities/eu/pages/join">sign up for free</a> and will be onboarded as soon as possible through out the pilot phase.</p>
-<div align="center" style="padding:20px"><img src="/2024/03/20/2024-03-20-eu-open-research-repository/join-page.png" width="50%" /></div><h4>Open Research Europe (ORE)</h4>
-<p>The EU Open Research Repository serves as a complementary platform to the Open Research Europe (ORE) publishing platform. Open Research Europe focuses on providing a publishing venue for peer-reviewed articles, ensuring that research meets rigorous academic standards. The EU Open Research Repository provides a space for all the other research outputs including data sets, software, posters, and presentations that are out of scope for ORE. This holistic approach enables researchers to not only publish their findings but also share the underlying data and materials that support their work, fostering transparency and reproducibility in the scientific process.</p>
-<h4>Funding</h4>
-<p>The EU Open Research Repository is funded by the European Union under grant agreement no. 101122956 (HORIZON-ZEN).</p>
-<p>You can learn more about the HORIZON-ZEN project on <a href="https://about.zenodo.org/projects/horizon-zen/">https://about.zenodo.org/projects/horizon-zen/</a></p>
 </div>
   
   <br />
