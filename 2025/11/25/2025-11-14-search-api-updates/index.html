@@ -6,30 +6,29 @@
 <meta property="og:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
 
 
-<meta property="og:title" content="Zenodo - Research. Shared." />
+<meta property="og:title" content="New rate-limits to Search API" />
 
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
 
 
-<meta property="og:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@zenodo_org" />
 <meta name="twitter:creator" content="@zenodo_org" />
 
-<meta name="twitter:title" content="Zenodo - Research. Shared." />
+<meta property="og:title" content="New rate-limits to Search API" />
 
 
 
 <meta name="twitter:description" content="Zenodo is a free and open digital archive built by CERN and OpenAIRE, enabling researchers to share and preserve research output in any size, format and from all fields of research." />
 
 <meta name="twitter:image" content="https://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" />
-<link rel="stylesheet" href="../../static/zenodo.css">
-<link rel="stylesheet" href="../../static/style.css">
-<link rel="stylesheet" href="../../static/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../../static/zenodo.css">
+<link rel="stylesheet" href="../../../../static/style.css">
+<link rel="stylesheet" href="../../../../static/font-awesome/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
-<title>Zenodo Blog | Zenodo</title>
+<title>New rate-limits to Search API | Zenodo Blog  | Zenodo</title>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
@@ -67,158 +66,58 @@
       <div class="row">
         <div class="col-md-12">
           
-
   
     
-<a href="../../2018/04/10/advanced-search-guide/"><h1>New help guide: Advanced search</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/lnielsen.jpg" />
-    
-    
-    
-    Lars Holm Nielsen,
-  
-  on April 10, 2018
-</p>
-<hr />
-<div class="body"><p>Visit the new search guide on
-<a href="https://help.zenodo.org/guides/search/">https://help.zenodo.org/guides/search/</a>.</p>
-<p>Users mostly search on Zenodo using only keywords, similarly to how they
-would search for something on Google or any other other search engine.
-Keywords are, however, not always enough if you're looking for something specific.
-Therefore today, we have launched a <a href="https://help.zenodo.org/guides/search/">search help guide</a>, explaining in detail how you can make use of Zenodo's advanced search features.</p>
-<p>The guide explains basic concepts of simple field searches, e.g., searching only within the title field,
-as well as advanced concepts such as range searches, e.g., searching for publications dated between 2010
-and 2011. The guide also includes a full reference of all available fields you can search on, so you can construct the exact search query you need.</p>
-<p><img src="../../2018/04/10/advanced-search-guide/advanced-search.gif" alt="Search guide for Zenodo"></p>
-<p>Under the hood our search engine is powered by
-<a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch</a> - the
-most powerful open source search engine available on the market today.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/11/02/version-field/"><h1>Version field launched!</h1></a>
+<h1>New rate-limits to Search API</h1>
 
 <p class="meta">
   by
   
     
     
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/aioannidis.jpg" />
+    <img class="img-rounded" width=18 height=18 src="../../../../static/img/authors/aioannidis.jpg" />
     
     
     
     Alex Ioannidis,
   
-  on November 2, 2017
+  on November 25, 2025
 </p>
 <hr />
-<div class="body"><p>As of today, we have extended our metadata schema with the <code>version</code> term, so you can explicitly specify the version of your software, dataset, or any other type of upload.
-This allows you to use the version tags such as 1.2.1 or 2017.01 instead of the default version numbers such as 1, 2 or 3.
-The addition is part of our efforts to make software a citable, first-class citizen in the world of scientific research.</p>
-<p><img src="../../2017/11/02/version-field/version-field.png" alt="Deposit form"></p>
-<p>At the moment the field accepts any kind of text as input, although we strongly suggest that you use <a href="https://semver.org/">semantic versioning</a> for machine-readability.</p>
-<p>The version field is directly integrated within our search results and record pages.</p>
-<p><img src="../../2017/11/02/version-field/version-records-search.png" alt="Record page">
-<img src="../../2017/11/02/version-field/version-records-ui.png" alt="Record page"></p>
-<h4>What about GitHub releases?</h4>
-<p>This change extends to our GitHub integration, which from now on will automatically populate the version field using the git tag of your GitHub release.
-You don't have to worry about all GitHub releases that have been already published on Zenodo - they have all been updated with their corresponding release tags.</p>
-<h4>Does this affect the order of the record versions?</h4>
-<p>No, the order of the record's versions remains as before, i.e.: record versions are ordered chronologically by the record creation time.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="../../2017/10/10/grants-and-language-update/"><h1>Extended grant support, ORCID and language field.</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="../../static/img/authors/knowak.jpg" />
-    
-    
-    
-    Krzysztof Nowak,
-  
-  on October 10, 2017
-</p>
-<hr />
-<div class="body"><p>Today, we are introducing three additions to Zenodo:</p>
-<ol>
-<li>Extended grant support</li>
-<li>Language field</li>
-<li>ORCID for authors</li>
-</ol>
-<h2>Extended grant support (powered by OpenAIRE)</h2>
-<p>We are expanding our grants database with over 620,000 grants from 8 new funders such as the National Science Foundation (US) and Wellcome Trust (UK) - all thanks to <a href="https://openaire.eu/">OpenAIRE</a>'s ever growing grants database.</p>
-<p><img src="../../2017/10/10/grants-and-language-update/grants.png" alt="Zenodo OpenAIRE grants database"></p>
-<p>So far we have only been supporting grants from the European Commission (FP7 and Horizon 2020). Today our dataset has grown and contains grants from the following funders:</p>
+<div class="body"><p>As Zenodo continues to grow, we're taking steps to keep the service fast and reliable for everyone.
+Over the past year, we've seen a sharp rise in aggressive and covert harvesting activity targeting our search endpoints, and often at volumes that disrupt normal use.
+Our team has been blocking misbehaving clients on an almost daily basis to maintain stability for researchers who rely on Zenodo for browsing, searching, and depositing their work.
+As these attacks have intensified, we're introducing new rate limits on our records search API to help protect the platform and ensure fair access for all users.</p>
+<h3>What's changing?</h3>
+<p>Starting today, we're enforcing the following limits on our <strong>records search endpoints</strong>:</p>
 <ul>
-<li>National Science Foundation (USA) - 497646 grants</li>
-<li>European Commission (EU) - 39409 grants</li>
-<li>Foundation for Science and Technology (Portugal) - 37277 grants</li>
-<li>National Health and Medical Research Council (Australia) - 24354 grants</li>
-<li>Netherlands Organisation for Scientific Research (The Netherlands) - 24180 grants</li>
-<li>Australian Research Council (Australia) - 23011 grants</li>
-<li>Wellcome Trust (United Kingdom) - 12196 grants</li>
-<li>Ministry of Science and Education (Croatia) - 2120 grants</li>
-<li>Ministry of Education, Science and Technological Development (Serbia) - 777 grants</li>
+<li><strong>Page sizes</strong>: Maximum 25 results per page for anonymous requests, 100 results per page for authenticated requests</li>
+<li><strong>Request frequency</strong>: Maximum 30 requests per minute (for both anonymous and authenticated users)</li>
 </ul>
-<p>which means that our grants database grew from nearly <strong>40,000</strong> to over <strong>660,000</strong> grants! We wouldn't have been able to do that if it wasn't for the OpenAIRE team and their hard work in collecting, maintaining and distributing the grants database for the benefit of Open Science!</p>
-<h2>Language field</h2>
-<p>Today we are also adding a new language field to our metadata, which allows you to record the primary language of an upload. You can select the language in the upload form simply by starting to type the English name, a 2-letter or a 3-letter ISO 639 code:</p>
-<p><img src="../../2017/10/10/grants-and-language-update/language.png" alt="Language for Zenodo"></p>
-<p>The new language field supports all languages defined in ISO 639-3, which in total defines 436 individual and macro-languages. For the full reference of language codes see the <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">Library of Congress ISO 639 Language List</a>.</p>
-<h4>What if my record contains more than one language?</h4>
-<p>The field is used to specify the primary language of the resource, hence if, e.g., a thesis is written in Danish and has an English abstract, then the primary language is Danish. Similarly, the primary language of a paper written in English, which is on the topic of Greek linguistics, thus containing a lot of text in Greek, is English.</p>
-<p>There are always cases where it is not possible to clearly determine the primary language, for example for a dataset containing the mapping between common Polish and French phrases. In those special cases you can always use ISO 639-3 code <a href="https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?code_ID=306"><code>mul</code> (Multiple Languages)</a>.</p>
-<h2>ORCID for authors</h2>
-<p>Last but not least, you can now include an author's ORCID under the <em>Authors</em> section of the metadata on the deposit web interface.
-<img src="../../2017/10/10/grants-and-language-update/orcid.png" alt="Zenodo author ORCID"></p>
+<p>These limits ensure that Zenodo remains responsive for everyone.
+The higher page limit for authenticated requests also allows us to contact users if we notice usage patterns that our other APIs could better serve.</p>
+<h3>Why these changes?</h3>
+<p>Our infrastructure prioritizes researchers who are searching, browsing, and discovering content on Zenodo.
+But we've seen automated systems request very large amounts of data very quickly (up to 500 requests per second), which uses up resources and slows things down for everyone else.</p>
+<p>After analysing current access patterns, we designed these new limits to accommodate typical use cases.
+If you're just searching for related work, browsing records, or managing your community, you won't notice a difference.</p>
+<h3>Better alternatives for bulk data access</h3>
+<p>If you've built scripts, applications, or integrations using the search API for bulk harvesting, or need large amounts of Zenodo metadata (to build indexes, perform analysis, or keep external systems synchronized), we highly recommend using the following methods:</p>
+<ul>
+<li><strong><a href="https://developers.zenodo.org/#oai-pmh">OAI-PMH</a></strong>: A standardized protocol for harvesting metadata and keeping systems synchronized with repositories like Zenodo.
+It supports incremental updates (only fetching what's new or changed), filtering by community, and multiple metadata formats.
+OAI-PMH delivers 50 records per page and has the same 30 requests per minute limit.</li>
+<li><strong><a href="https://developers.zenodo.org/#metadata-dumps">Metadata dumps</a></strong>: Monthly exports of all Zenodo metadata that you can download and process on your own systems.
+This is the most efficient way to access bulk metadata, especially if you need to analyze large portions of Zenodo's content.
+The dumps are available in DataCite XML and JSON formats.</li>
+</ul>
+<h3>Looking ahead</h3>
+<p>We're working to scale Zenodo sustainably while keeping the service responsive and user-friendly.
+We'll closely monitor how these changes perform and make adjustments if needed.
+As the threat landscape is evolving rapidly, we are very likely to introduce further mitigation measures in the future.</p>
+<p>If you have questions regarding these changes, or need help transitioning to OAI-PMH or metadata dumps, please <a href="https://zenodo.org/support">contact our support team</a>.</p>
 </div>
   
-  <br />
-  <br />
-
-
-  
-<div class="pagination">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 text-center">
-        
-          <b><a href="../13/">Older</a></b>
-        
-      </div>
-      <div class="col-md-4 text-center">
-
-        <b><a href="/all">All</a></b>
-      </div>
-      <div class="col-md-4 text-center">
-        
-          <b><a href="../11/">Newer</a></b>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
         </div>
       </div>

@@ -70,6 +70,61 @@
 
   
     
+<a href="2025/11/25/2025-11-14-search-api-updates/"><h1>New rate-limits to Search API</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="static/img/authors/aioannidis.jpg" />
+    
+    
+    
+    Alex Ioannidis,
+  
+  on November 25, 2025
+</p>
+<hr />
+<div class="body"><p>As Zenodo continues to grow, we're taking steps to keep the service fast and reliable for everyone.
+Over the past year, we've seen a sharp rise in aggressive and covert harvesting activity targeting our search endpoints, and often at volumes that disrupt normal use.
+Our team has been blocking misbehaving clients on an almost daily basis to maintain stability for researchers who rely on Zenodo for browsing, searching, and depositing their work.
+As these attacks have intensified, we're introducing new rate limits on our records search API to help protect the platform and ensure fair access for all users.</p>
+<h3>What's changing?</h3>
+<p>Starting today, we're enforcing the following limits on our <strong>records search endpoints</strong>:</p>
+<ul>
+<li><strong>Page sizes</strong>: Maximum 25 results per page for anonymous requests, 100 results per page for authenticated requests</li>
+<li><strong>Request frequency</strong>: Maximum 30 requests per minute (for both anonymous and authenticated users)</li>
+</ul>
+<p>These limits ensure that Zenodo remains responsive for everyone.
+The higher page limit for authenticated requests also allows us to contact users if we notice usage patterns that our other APIs could better serve.</p>
+<h3>Why these changes?</h3>
+<p>Our infrastructure prioritizes researchers who are searching, browsing, and discovering content on Zenodo.
+But we've seen automated systems request very large amounts of data very quickly (up to 500 requests per second), which uses up resources and slows things down for everyone else.</p>
+<p>After analysing current access patterns, we designed these new limits to accommodate typical use cases.
+If you're just searching for related work, browsing records, or managing your community, you won't notice a difference.</p>
+<h3>Better alternatives for bulk data access</h3>
+<p>If you've built scripts, applications, or integrations using the search API for bulk harvesting, or need large amounts of Zenodo metadata (to build indexes, perform analysis, or keep external systems synchronized), we highly recommend using the following methods:</p>
+<ul>
+<li><strong><a href="https://developers.zenodo.org/#oai-pmh">OAI-PMH</a></strong>: A standardized protocol for harvesting metadata and keeping systems synchronized with repositories like Zenodo.
+It supports incremental updates (only fetching what's new or changed), filtering by community, and multiple metadata formats.
+OAI-PMH delivers 50 records per page and has the same 30 requests per minute limit.</li>
+<li><strong><a href="https://developers.zenodo.org/#metadata-dumps">Metadata dumps</a></strong>: Monthly exports of all Zenodo metadata that you can download and process on your own systems.
+This is the most efficient way to access bulk metadata, especially if you need to analyze large portions of Zenodo's content.
+The dumps are available in DataCite XML and JSON formats.</li>
+</ul>
+<h3>Looking ahead</h3>
+<p>We're working to scale Zenodo sustainably while keeping the service responsive and user-friendly.
+We'll closely monitor how these changes perform and make adjustments if needed.
+As the threat landscape is evolving rapidly, we are very likely to introduce further mitigation measures in the future.</p>
+<p>If you have questions regarding these changes, or need help transitioning to OAI-PMH or metadata dumps, please <a href="https://zenodo.org/support">contact our support team</a>.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="2024/10/21/2024-10-21-production/"><h1>EU Open Research Repository Moves to Production</h1></a>
 
 <p class="meta">
@@ -145,54 +200,6 @@ This integration ensures that software source code deposited in Zenodo is automa
 <h4>What’s next?</h4>
 <p>While the core integration with Software Heritage has launched, further backend improvements are planned for the coming six months, primarily aimed at improving interoperability. Additionally, this integration will be fully incorporated into InvenioRDM, making it easier for other repositories, such as institutional ones, to <a href="https://docs.softwareheritage.org/devel/swh-deposit/index.html">integrate with Software Heritage</a>.</p>
 <p>This work was funded by the European Commission through grant agreement no. <a href="https://doi.org/10.3030/101057264">101057264</a> (FAIRCORE4EOSC).</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="2024/10/14/2024-10-14-dataprize/"><h1>Win the 2024 Dataworks! $100,000 Grand Prize by reusing Zenodo data</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    
-    
-    Pearl D. Go,
-  
-  on October 14, 2024
-</p>
-<hr />
-<div class="body"><h4>Announcing the 2024 DataWorks! Prize!</h4>
-<p>The Federation of American Societies for Experimental Biology (FASEB) and the National Institutes of Health (NIH) invite you to submit your data reuse project proposal that demonstrates the power of data reuse to advance human health.</p>
-<p>The 2024 DataWorks! Prize is a collaboration with the seven generalist repositories participating in the NIH-funded Generalist Repositories Ecosystem Initiative (GREI) and will focus on best practices in data reuse and secondary analysis that advance human health. Participants will participate in a two-phase challenge.</p>
-<ul>
-<li><strong>Phase 1:</strong> Research teams will submit a proposal for a secondary analysis research project that can be completed within a 6 month period and incorporates data from one or more generalist repositories participating in the GREI (<a href="https://datascience.nih.gov/data-ecosystem/generalist-repository-ecosystem-initiative">more information on GREI</a>); data from other repositories can be combined.</li>
-<li><strong>Phase 2:</strong> Selected teams will complete their reuse/secondary analysis research projects and share their findings publicly.</li>
-</ul>
-<h4>Awards and Prizes</h4>
-<p>The NIH Office of Data Science Strategy will award up to $500,000 total in cash prizes to the Challenge winners. NIH will award the prize purse in the following amounts:</p>
-<ul>
-<li>Phase 1: $25,000 per winner, up to ten (10) winners</li>
-<li>Phase 2: Grand Prize: $100,000 for one (1) winner; Distinguished Achievement Awards: $75,000 per winner, up to two (2) winners</li>
-</ul>
-<h4>Successful submissions must:</h4>
-<ul>
-<li>Address a pivotal health research question via data reuse and secondary data analysis</li>
-<li>Include data from at least one <a href="https://datascience.nih.gov/data-ecosystem/generalist-repository-ecosystem-initiative">GREI repository</a>, including <a href="https://zenodo.org/">Zenodo</a>.</li>
-<li>Share results with the broader community</li>
-<li>Be submitted by October 24, 2024</li>
-</ul>
-<h4>Reusing data in Zenodo:</h4>
-<p>As a cross-domain repository, Zenodo enables researchers to share and preserve a wide range of interdisciplinary research outputs, including research papers, data sets, research software, reports, presentations, and any other research related digital outputs.</p>
-<h4>How can I find Zenodo data for reuse?</h4>
-<p>Search for data by simply typing keywords of interest in the search box at the top of the <a href="https://zenodo.org/">Zenodo home page</a>. Facet search results by using the menu on the left side of the page by resource type (e.g., dataset), access status (e.g., open), subject area, and file type (for example, <a href="https://zenodo.org/search?q=hypertension&amp;f=resource_type%3Adataset&amp;l=list&amp;p=1&amp;s=10&amp;sort=bestmatch">hypertension</a>, <a href="https://zenodo.org/search?q=pathogen&amp;f=resource_type%3Adataset&amp;f=access_status%3Aopen&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest">pathogen</a>, <a href="https://zenodo.org/search?q=%22comparative%20genomics%22&amp;f=resource_type%3Adataset&amp;f=access_status%3Aopen&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest">comparative genomics</a>, <a href="https://zenodo.org/search?q=%22precision%20medicine%22&amp;f=resource_type%3Adataset&amp;f=access_status%3Aopen&amp;l=list&amp;p=1&amp;s=10&amp;sort=mostviewed">precision medicine</a>). You can order the search results based on date, best match, most viewed, etc. Use the Zenodo Search Guide to further craft your search.</p>
-<p>You can also try your search in <a href="https://zenodo.org/communities">Zenodo Communities</a>, A Zenodo community provides a space for domains, projects, and institutions to curate and manage a collection of their research outputs and share with members of the community and beyond (for example, <a href="https://zenodo.org/communities/search?q=&amp;f=funder%3A01cwqze88&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest">some Communities funded by NIH</a>).</p>
-<p><strong>Full details about the challenge can be found <a href="https://www.herox.com/dataworks">here</a>.</strong></p>
-<p>We encourage you and your team to submit your project proposals. Your ideas could shape the future of healthcare.</p>
 </div>
   
   <br />
