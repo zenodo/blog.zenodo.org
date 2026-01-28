@@ -70,6 +70,57 @@
 
   
     
+<a href="2026/01/28/2026-01-28-improvements-and-support-load/"><h1>Planned improvements and support expectations</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="static/img/authors/ntarocco.jpg" />
+    
+    
+    
+    Nicola Tarocco,
+  
+  on January 28, 2026
+</p>
+<hr />
+<div class="body"><p>Over the past months, many of you have experienced periods of slowness and occasional service interruptions on Zenodo.
+We would like to explain the current situation and outline the steps we are taking to address it.</p>
+<h3>Increased traffic and automated access</h3>
+<p>Zenodo traffic has increased significantly, not only from human users but also from automated systems,
+including bots, <strong>harvesters for AI and people using AI</strong>. These systems generate a <strong>sustained and aggressive load</strong> on the platform.
+Many of these automated systems do not respect our rate limits and actively try to circumvent them, creating additional strain.
+On average, we now observe around 180 requests per second. At peak times during working hours, this can easily reach 250 requests
+per second and more. The current Zenodo infrastructure was designed based on the traffic patterns observed during the migration
+to the next-generation platform, InvenioRDM, in 2023, when the load was lower and more predictable.</p>
+<p>This affects both browsing and file transfers, resulting in <strong>slower uploads and downloads</strong>,
+as well as occasional unavailability. Basic mitigation techniques such as blocking and
+rate limiting are no longer sufficient on their own. More advanced traffic management and
+protection mechanisms are required, together with infrastructure upgrades.</p>
+<h3>Planned improvements</h3>
+<p>In the coming weeks, we will <strong>progressively upgrade the platform</strong> and deploy additional
+mitigation measures to better handle the increased load and reduce the impact of abusive or malicious traffic.
+These changes will be rolled out step by step in order to preserve service continuity.</p>
+<p>During this period, we kindly ask for your <strong>patience</strong>. At the moment, support requests
+related to performance issues or temporary slowness are difficult to address individually,
+as the root causes are already identified and are being handled at the infrastructure level.</p>
+<p>As Zenodo grows, our support team is receiving <strong>more support requests than ever</strong>.
+While we work through these requests, the fastest way to find a solution is often through our <a href="https://help.zenodo.org">Help Portal and FAQs</a>.
+We've designed these resources to give you instant answers to common questions so you can get back to your research without the wait.</p>
+<p>We will keep you informed of major developments and improvements as they are deployed.</p>
+<p>As always, Zenodo remains committed to its core mission of supporting open science,
+reserving research outputs, and providing reliable access to research for the global community.
+Ensuring that research remains open, accessible, and reusable continues to guide our technical and operational decisions.</p>
+<p>Thank you for your understanding and for your continued use of Zenodo.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="2025/11/25/2025-11-14-search-api-updates/"><h1>New rate-limits to Search API</h1></a>
 
 <p class="meta">
@@ -158,48 +209,6 @@ As the threat landscape is evolving rapidly, we are very likely to introduce fur
 <h4>Funding</h4>
 <p>The EU Open Research Repository is funded by the European Union under grant agreement no. 101122956 (HORIZON-ZEN).</p>
 <p>You can learn more about the HORIZON-ZEN project on <a href="https://about.zenodo.org/projects/horizon-zen/">https://about.zenodo.org/projects/horizon-zen/</a></p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="2024/10/21/2024-10-21-swh/"><h1>Zenodo launches integration with Software Heritage</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="static/img/authors/lnielsen.jpg" />
-    
-    
-    
-    Lars Holm Nielsen,
-  
-  on October 21, 2024
-</p>
-<hr />
-<div class="body"><p>Zenodo and <a href="https://www.softwareheritage.org/">Software Heritage</a>, through the EU-funded <a href="https://faircore4eosc.eu/">FAIRCORE4EOSC</a> project, have launched a new integration. In order to fulfill the promise of an interconnected and interoperable academic ecosystem, research software infrastructures should support the archiving of source code within the universal source code archive, contributing to the global software commons.
-This integration ensures that software source code deposited in Zenodo is automatically archived in Software Heritage. It implements the recommendations from the <a href="https://data.europa.eu/doi/10.2777/28598">EOSC Scholarly Infrastructures for Research Software</a> report:</p>
-<p><em>“In the 21st century, many research activities use computing systems to monitor their experiments, to visualise or analyse their results, or to check hypotheses through simulation.It has therefore become essential to archive, preserve and share research software.”</em></p>
-<p><em>“Over the past decade, awareness has been raised about the importance of software in the scholarly world. Several infrastructures have started to be built, or adapted, to address some of the following key challenges that need to be tackled to put software on equal footing with other research outputs in the scholarly world:</em></p>
-<ul>
-<li><em>Archiving software to ensure research software artifacts are not lost.</em></li>
-<li><em>Referencing software to ensure research artifacts can be precisely identified.</em></li>
-<li><em>Describing software to easily discover and identify research software artifacts.</em></li>
-<li><em>Crediting all authors to ensure their contributions are recognized.”</em></li>
-</ul>
-<h4>Zenodo: Research software + Versioning + GitHub</h4>
-<p>Zenodo has long had a strong focus on supporting research software. Since 2014 Zenodo has an integration with GitHub that enables researchers to easily archive research software in GitHub into Zenodo. Upon deposit of the research software in Zenodo (either from GitHub or directly in Zenodo), the researcher would obtain a DOI (Digital Object Identifier) which would facilitate the persistent identification of software and support researchers in adopting the <a href="https://doi.org/10.7717/peerj-cs.86">Software Citation Principles</a>, in particular in citing research software papers. The Zenodo versioning feature further enabled both the citation of individual snapshots of software vs. citing a software project as a whole. Today, Zenodo is the <a href="https://doi.org/10.5438/1nmy-9902">largest minter of software DOIs</a> and is able to <a href="https://blog.zenodo.org/2019/01/10/2019-01-10-asclepias/">track citations to software independently</a> of which persistent identifier was used in the citation.</p>
-<h4>Integration with Software Heritage</h4>
-<p>The new integration between Zenodo and Software Heritage enhances the capabilities to archive, reference, describe, and cite research software artifacts. Most of the process occurs behind the scenes, ensuring seamless and transparent software archiving for researchers, regardless of their workflow.</p>
-<div align="center" style="padding:20px"><img src="/2024/10/21/2024-10-21-swh/zenodo.png" width="100%" /><br/><i>Figure 1 - Zenodo record for a software deposit showing that it has been archived in Software Heritage in the bottom right corner.</i></div><p>When a researcher deposits software in Zenodo, the software will be automatically sent to Software Heritage (if the files are publicly accessible). Zenodo then obtains the associated Software Hash Identifier (<a href="https://www.swhid.org/">SWHID</a>), links it with the DOI, and displays it on the record landing page. The DOI integrates with the scholarly publishing ecosystem, while the SWHID provides direct access to the archived source code, including the full version history. This bi-directional linking ensures interoperability between two key identifiers for research software.</p>
-<div align="center" style="padding:20px"><img src="/2024/10/21/2024-10-21-swh/swh.png" width="100%" /><br/><i>Figure 2 - The corresponding Zenodo software record in Software Heritage.</i></div><p>In addition to archiving software in Software Heritage, Zenodo has enhanced the upload form with software-specific fields, such as programming languages and repository URLs on top of our already existing fields such as the SPDX license field. We’ve also added support for CodeMeta and Citation File Format export formats.</p>
-<h4>What’s next?</h4>
-<p>While the core integration with Software Heritage has launched, further backend improvements are planned for the coming six months, primarily aimed at improving interoperability. Additionally, this integration will be fully incorporated into InvenioRDM, making it easier for other repositories, such as institutional ones, to <a href="https://docs.softwareheritage.org/devel/swh-deposit/index.html">integrate with Software Heritage</a>.</p>
-<p>This work was funded by the European Commission through grant agreement no. <a href="https://doi.org/10.3030/101057264">101057264</a> (FAIRCORE4EOSC).</p>
 </div>
   
   <br />
