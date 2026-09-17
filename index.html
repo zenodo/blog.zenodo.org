@@ -79,6 +79,78 @@
 
   
     
+<a href="2026/09/15/2026-09-15-stability-and-performance-updates/"><h1>Zenodo performance: an update on the current situation</h1></a>
+
+<p class="meta">
+  by
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="static/img/authors/lgugliel.png" />
+    
+    
+    
+    Lea Guglielmetto-Chaleard,
+  
+    
+    
+    <img class="img-rounded" width=18 height=18 src="static/img/authors/jhinge.jpg" />
+    
+    
+    
+    Julie Hinge,
+  
+  on September 15, 2026
+</p>
+<hr />
+<div class="body"><p>Over the past few weeks, many users have noticed that Zenodo is slower than usual. Pages and searches may take longer to load, and uploads and downloads may sometimes fail or take longer than expected.</p>
+<p>We understand that this can be frustrating, particularly when working with Zenodo as part of research workflows.</p>
+<p>This post provides an update on the current situation and what we’re doing about it.</p>
+<h3>Why is Zenodo slow?</h3>
+<p>Zenodo continues to grow, both in the amount of research it hosts and in the number of people and services accessing it.</p>
+<p>Following our <a href="https://blog.zenodo.org/2026/01/28/2026-01-28-improvements-and-support-expectations/">January 2026 update</a>, we made improvements to and scaled up Zenodo’s infrastructure, which helped address the immediate performance issues for several months. Since then, continued growth in demand, together with an increase in automated traffic, has created new performance challenges.</p>
+<p>The graph below illustrates the sustained increase in incoming requests to Zenodo over time. This higher traffic volume, together with changes in the nature and distribution of requests, is putting additional pressure on the service.</p>
+<div align="center" style="padding:20px"><img src="/blog/2026/09/15/2026-09-15-stability-and-performance-updates/increase-in-traffic.jpg" width="75%" /><br/><i>Increase in incoming requests to Zenodo over time</i></div><p>This automated traffic includes crawlers, harvesters, AI-related systems, and other automated clients accessing Zenodo at high frequency. It puts significant pressure on the service and affects performance for many users. Infrastructure scaling alone is no longer sufficient, so we are now working on the next set of measures to improve Zenodo’s performance and resilience.</p>
+<p>Because Zenodo is an open service, we want to keep its content accessible and reusable for all users. Our goal is therefore not only to make Zenodo faster, but also to make it more reliable when demand is high.</p>
+<h3>What are we doing?</h3>
+<p>We are working on several improvements in parallel.</p>
+<ol>
+<li><p><strong>Improving Zenodo’s software:</strong> We are continuing performance work in the Zenodo codebase, including:</p>
+<ol>
+<li>upgrading to Python 3.14</li>
+<li>working through a number of application-level performance improvements, such as identifying and reducing expensive operations in the application. Where possible, these improvements will be implemented in <a href="https://invenio-software.org/products/rdm/">InvenioRDM</a>, the underlying digital repository technology, so that Zenodo and other InvenioRDM adopters can benefit from the improvements.</li>
+</ol>
+</li>
+<li><p><strong>Improving traffic management:</strong> We are improving how we identify and manage different types of traffic to Zenodo. This includes fine-tuning rate limits and better identifying the sources of incoming requests, allowing us to apply appropriate measures based on the type and volume of traffic while keeping legitimate use responsive. Read our <a href="https://blog.zenodo.org/2025/11/25/2025-11-14-search-api-updates/">Search API update</a>.</p>
+</li>
+<li><p><strong>Improving bulk access:</strong> To support large-scale reuse of Zenodo metadata without putting unnecessary strain on the live service, we are developing exporter dumps and other bulk-access mechanisms.</p>
+<p>This will help us provide responsive access for researchers while making large-scale harvesting more efficient and sustainable.</p>
+</li>
+<li><p><strong>Testing additional protections:</strong> We are testing targeted Proof-of-Work challenges to help distinguish normal browser traffic from certain forms of automated access.</p>
+<p>These measures will be applied selectively and carefully to avoid creating unnecessary barriers for researchers, accessibility tools, and legitimate integrations.</p>
+</li>
+<li><p><strong>Working with CERN and the wider community:</strong> Zenodo is operated within CERN’s infrastructure, and discussions are ongoing with CERN teams about the wider traffic situation.</p>
+<p>We are also sharing knowledge with partners in the InvenioRDM community to better identify and filter problematic automated traffic earlier.</p>
+</li>
+</ol>
+<h3>What do users need to do?</h3>
+<p>If you use Zenodo interactively to search, browse, deposit or download research outputs, some operations may take longer, but <strong>you do not need to change how you use the service.</strong></p>
+<p><strong>If you operate a crawler, harvester, AI system or other application that makes large numbers of requests, please respect Zenodo's published rate limits, use bulk-access options where available and use a clear and identifiable User-Agent.</strong> We recommend a format such as “AppName/1.0 (+<a href="https://example.com">https://example.com</a>; contact@example.com)”, which allows us to identify the source of traffic, apply appropriate measures or contact you in case of need.
+To prevent automated abuse, high-volume requests using generic User-Agents (such as default "curl" or "python-requests") may be rate-limited or blocked. We strongly encourage adding a custom User-Agent string to your scripts.</p>
+<p>For large-scale metadata access, please use services such as OAI-PMH, metadata dumps and other mechanisms designed for this purpose rather than repeatedly querying the interactive Search API.</p>
+<p>This helps keep Zenodo available and responsive for everyone.</p>
+<h3>What happens next?</h3>
+<p>This is ongoing work. In the short term, we are continuing to improve application performance, tune rate limits and mitigate excessive automated traffic. In parallel, we are developing longer-term improvements to make Zenodo more resilient as the service continues to grow.</p>
+<p>Our objective is not simply to get through the current period of high load, but to build a service that remains reliable and responsive as the scale and nature of demand continue to change.</p>
+<p>We will share further updates as significant improvements become available.</p>
+<p>Thank you for your patience, feedback and continued use of Zenodo.</p>
+</div>
+  
+  <br />
+  <br />
+
+  
+    
 <a href="2026/08/18/2026-08-18-latest-improvements-eor/"><h1>Latest platform improvements and updates</h1></a>
 
 <p class="meta">
@@ -196,79 +268,6 @@ Between May 13 and 15, 2026, a misconfiguration briefly caused some signed-in Ze
 <p>If you were affected, we have emailed the address on your account. If you did not receive an email from us about this incident, you were not in the affected group.</p>
 <hr>
 <p>We sincerely apologize for this incident and any confusion or concern it may have caused. While it is essential to adapt our infrastructure to handle modern web and AI traffic, we are reviewing our internal staging and testing procedures to ensure traffic-handling updates undergo stricter isolation rules before reaching production.</p>
-</div>
-  
-  <br />
-  <br />
-
-  
-    
-<a href="2026/04/13/2026-04-13-latest-platform-updates/"><h1>Latest platform improvements and updates</h1></a>
-
-<p class="meta">
-  by
-  
-    
-    
-    <img class="img-rounded" width=18 height=18 src="static/img/authors/lgugliel.png" />
-    
-    
-    
-    Lea Guglielmetto-Chaleard,
-  
-  on April 13, 2026
-</p>
-<hr />
-<div class="body"><p>We're excited to share a new round of updates designed to improve collaboration, transparency, and usability across Zenodo and the EU Open Research Repository (EOR).</p>
-<h3>Improved record deposits</h3>
-<p>We've introduced updates to simplify the deposition and publication process:</p>
-<ul>
-<li>You can now request a <strong>storage quota increase</strong> directly during record deposition, making it easier to manage larger datasets. See the <a href="https://help.zenodo.org/docs/deposit/manage-quota/">Manage storage quota</a> documentation page for more information.</li>
-<li>When editing a published record and changing files, you will now see <strong>remaining days left to publish</strong>. See the <a href="https://help.zenodo.org/docs/deposit/manage-files/#modify">Modify files after publication</a> documentation page for more information.</li>
-<li>In the deposit form, the "Creators" section has been renamed to "<strong>Creators/Authors</strong>" for improved clarity when uploading datasets or publications.</li>
-</ul>
-<div align="center" style="padding:20px"><img src="/2026/04/13/2026-04-13-latest-platform-updates/quota-increase.png" width="50%" /><br/><i>Zenodo deposit form file upload section with the new quota increase feature</i></div><h3>Enhanced commenting and discussion</h3>
-<p>When <a href="https://help.zenodo.org/docs/communities/review-submissions/">reviewing submissions</a>, engaging with other users is now more seamless and interactive:</p>
-<ul>
-<li>The new <strong>threaded comments</strong> feature is now available, enabling to reply to specific comments in a clearer and more structured way.</li>
-<li>You can now include <strong>mathematical equations</strong> when writing comments.</li>
-<li>Each comment now has its own persistent direct link (permalink), making it easy to share and reference specific points in discussions.</li>
-<li>You can now attach files to each comment, such as inline images or other support material.</li>
-<li>From the published record landing page, the new link "View comments", in the "Communites" side panel, makes it easier to access to the submission review page.</li>
-<li>Community managers can now <strong>lock conversations</strong> and disable the addition of new comments, ensuring better moderation and control when needed.</li>
-</ul>
-<h3>Improved discovery and filtering</h3>
-<p>Finding relevant research is now faster and more intuitive. In the search page:</p>
-<ul>
-<li>The new sorting option "<strong>Most downloaded</strong>" helps finding impactful records.</li>
-<li>The new "<strong>Publication date</strong>" filter allows for more precise search refinement.</li>
-</ul>
-<div align="center" style="padding:20px"><img src="/2026/04/13/2026-04-13-latest-platform-updates/date-facets.png" width="40%" /><br/><i>Zenodo search page with new publication date facet</i></div><h3>Metadata standardization for theses and dissertations</h3>
-<p>To enhance interoperability and align with the DataCite schema, we are standardizing the resource type for <code>theses</code>.</p>
-<p>We recently identified an unnecessary distinction between “Thesis” and “Dissertation” in our metadata model. The user interface will now only display "Thesis" as an option, while internally, all records will use the DataCite-compliant "Dissertation" type. Existing DOIs will be updated to reflect this change, by converting the custom metadata:</p>
-<pre><code>  "types": {
-    "resourceType": "Thesis",
-    "resourceTypeGeneral": "Text"
-  }
-</code></pre>
-<p>to the standard DataCite representation:</p>
-<pre><code>  "types": {
-    "resourceTypeGeneral": "Dissertation"
-  }
-</code></pre>
-<p>For API usage, we will maintain backward compatibility. The custom value “publication-thesis” will still be accepted, but it will be automatically converted internally to “publication-dissertation”.</p>
-<h3>New integration in OpenAIRE</h3>
-<p>In OpenAIRE <a href="https://connect.openaire.eu/">CONNECT</a> and <a href="https://explore.openaire.eu/">EXPLORE</a>, you can now upload the Open Access version of a publication to Zenodo in a very easy way. To discover the feature, read the related <a href="https://www.openaire.eu/community/blogs/did-you-know-upload-open-access-versions-to-zenodo-with-openaire-connect-and-explore">OpenAIRE blog post</a>.</p>
-<h3>Share your feedback</h3>
-<p>These updates are part of our ongoing commitment to support open science and foster better collaboration across the research community. We encourage you to explore these new features and continue sharing your valuable feedback!</p>
-<p><strong>Share your feedback:</strong> help us by answering the EU Open Research Repository (EOR) <a href="https://ec.europa.eu/eusurvey/runner/Zenodo-EOR-Repository-Feedback-2026-03">Survey</a>! The survey is open to <strong>all Zenodo users</strong>. Your input is essential to help us better understand your needs and guide future improvements. We encourage you to take a few minutes to share your feedback and contribute to shaping the platform.</p>
-<p><strong>Upcoming webinar:</strong> The EOR will also be presented during <a href="https://openaccessbooksnetwork.hcommons.org/2026/01/23/oapen-eu-project-insights-from-eu-funded-authors/">OAPEN EU Project: Insights from EU-Funded Authors Webinar</a> on <strong>Tuesday 21 April 2026, 14:00 – 15:15 CEST</strong>.  Registration is open <a href="https://us06web.zoom.us/meeting/register/9OLk88UzT6CiW9W19pqJmA#/registration">here</a>!</p>
-<p><strong>Stay Connected &amp; Informed:</strong></p>
-<ul>
-<li>Subscribe to our <a href="https://newsletters.zenodo.org/subscription/form">newsletter</a>.</li>
-<li>Explore the <a href="https://help.zenodo.org/docs/">updated documentation pages</a>.</li>
-</ul>
-<p>Thank you for being part of Zenodo!</p>
 </div>
   
   <br />
